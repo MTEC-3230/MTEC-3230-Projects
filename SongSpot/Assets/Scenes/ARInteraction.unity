@@ -38,12 +38,20 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+>>>>>>> af12864... Updated SongSpot.
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   serializedVersion: 12
+=======
+  serializedVersion: 11
+>>>>>>> af12864... Updated SongSpot.
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +106,11 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
+<<<<<<< HEAD
   m_LightingSettings: {fileID: 4890085278179872738, guid: e9feca0d53564274b84ebdcc625252a1, type: 2}
+=======
+  m_UseShadowmask: 1
+>>>>>>> af12864... Updated SongSpot.
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,8 +130,11 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+<<<<<<< HEAD
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
+=======
+>>>>>>> af12864... Updated SongSpot.
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -210,6 +225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
+<<<<<<< HEAD
+=======
+  m_UseCustomRendererAsset: 0
+  m_CustomRendererAsset: {fileID: 0}
+>>>>>>> af12864... Updated SongSpot.
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -297,11 +317,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_FocusMode: -1
   m_LightEstimationMode: -1
   m_AutoFocus: 1
   m_LightEstimation: 0
   m_FacingDirection: 1
+=======
+  m_FocusMode: 1
+  m_LightEstimationMode: 0
+>>>>>>> af12864... Updated SongSpot.
 --- !u!114 &282840817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +403,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AttemptUpdate: 1
   m_MatchFrameRate: 1
+<<<<<<< HEAD
   m_TrackingMode: 2
+=======
+>>>>>>> af12864... Updated SongSpot.
 --- !u!4 &427002220
 Transform:
   m_ObjectHideFlags: 0
@@ -505,7 +533,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ARSessionOrigin: {fileID: 1335839534}
+<<<<<<< HEAD
   m_PlacementPrefab: {fileID: 5295117067104532748, guid: 1032d234f81c3401eb238fd7764ebe86, type: 3}
+=======
+  m_PlacementPrefab: {fileID: 5295117067104532748, guid: 1032d234f81c3401eb238fd7764ebe86,
+    type: 3}
+>>>>>>> af12864... Updated SongSpot.
   m_FallbackLayerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -605,7 +638,10 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 1.156e-42, y: 6.306785e-26, z: 1.19e-43, w: 0.12109375}
   m_UseBoundingSphereOverride: 0
+<<<<<<< HEAD
   m_UseViewFrustumForShadowCasterCull: 1
+=======
+>>>>>>> af12864... Updated SongSpot.
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1015722067
@@ -681,7 +717,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_PlanePrefab: {fileID: 1568414836858200, guid: f0e0be81472ff1243aa2afa27e5d0e61, type: 3}
+=======
+  m_PlanePrefab: {fileID: 1568414836858200, guid: f0e0be81472ff1243aa2afa27e5d0e61,
+    type: 3}
+>>>>>>> af12864... Updated SongSpot.
   m_DetectionMode: -1
 --- !u!114 &1335839539
 MonoBehaviour:
@@ -695,7 +736,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_RaycastPrefab: {fileID: 0}
+=======
+>>>>>>> af12864... Updated SongSpot.
 --- !u!1 &2013333495
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +759,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
+=======
+  m_IsActive: 1
+>>>>>>> af12864... Updated SongSpot.
 --- !u!64 &2013333496
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -745,7 +793,10 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+<<<<<<< HEAD
   m_RayTraceProcedural: 0
+=======
+>>>>>>> af12864... Updated SongSpot.
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -770,7 +821,10 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
   m_AdditionalVertexStreams: {fileID: 0}
+=======
+>>>>>>> af12864... Updated SongSpot.
 --- !u!33 &2013333498
 MeshFilter:
   m_ObjectHideFlags: 0

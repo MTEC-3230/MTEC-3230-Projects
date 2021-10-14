@@ -105,7 +105,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5295117067104532744}
+<<<<<<< HEAD
   - component: {fileID: 6985577177226967598}
+=======
+>>>>>>> af12864... Updated SongSpot.
   - component: {fileID: 3144398540161779439}
   m_Layer: 0
   m_Name: ManipulatorCube
@@ -129,6 +132,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &6985577177226967598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062801eeb6111a34ea5ef5398ba74355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> af12864... Updated SongSpot.
 --- !u!114 &3144398540161779439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +179,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
+<<<<<<< HEAD
       m_Calls:
       - m_Target: {fileID: 6985577177226967598}
         m_TargetAssemblyTypeName: ShowMenuOnSelect, Assembly-CSharp
@@ -186,6 +193,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+=======
+      m_Calls: []
+>>>>>>> af12864... Updated SongSpot.
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
