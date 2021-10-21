@@ -22,6 +22,21 @@ public class ShowMenuOnSelect : MonoBehaviour
 
 
 
+    public void ShowMenu()
+    {
+        Debug.Log("Show Menu");
+        StateOpen = true;
+    }
+
+    public void CloseMenu()
+    {
+        Debug.Log("Close Menu");
+        StateClose = true;
+    }
+
+
+
+
 
     // Update is called once per frame
     void Update()
