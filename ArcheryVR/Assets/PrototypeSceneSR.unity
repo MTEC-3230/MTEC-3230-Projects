@@ -3461,7 +3461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 492061308}
-  points: 10
+  points: 20
 --- !u!1 &872482958
 GameObject:
   m_ObjectHideFlags: 0
@@ -7031,7 +7031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 492061308}
-  points: 10
+  points: 5
 --- !u!1 &1889825953
 GameObject:
   m_ObjectHideFlags: 0
@@ -7142,7 +7142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 492061308}
-  points: 10
+  points: 50
 --- !u!4 &1902087604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 821324617058717411, guid: 18d9bafd4e7591347b9751e6fdf1beb9, type: 3}
@@ -7424,7 +7424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 492061308}
-  points: 10
+  points: 25
 --- !u!1 &1954094771
 GameObject:
   m_ObjectHideFlags: 0
