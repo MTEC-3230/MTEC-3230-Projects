@@ -39,7 +39,16 @@ public class Arrow : XRGrabInteractable
     {
         if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo))
         {
-            if(hitInfo.transform.TryGetComponent(out Rigidbody body))
+
+
+            if (hitInfo.transform.gameObject.TryGetComponent<Target>(out Target target))
+            {
+                target.AddScore();
+                Stop();
+                return;
+            }
+
+            if (hitInfo.transform.TryGetComponent(out Rigidbody body))
             {
                 if (body.TryGetComponent<Lantern>(out Lantern lantern))
                     lantern.TurnOn();
@@ -49,6 +58,10 @@ public class Arrow : XRGrabInteractable
                     potion.BreakPotion();
                     return;
                 }
+
+
+
+
                 rb.interpolation = RigidbodyInterpolation.None;
                 transform.parent = hitInfo.transform;
                 body.AddForce(rb.velocity, ForceMode.Impulse);
