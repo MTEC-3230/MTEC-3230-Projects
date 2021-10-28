@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public ScoreManager scoreManager; 
+    //public ScoreManager scoreManager; 
     public int points = 10; 
     public void AddScore()
     {
         Debug.Log("Adding points " + points);
-        scoreManager.AddScore(points);
+        ScoreManager.Instance.AddScore(points);
 
     }
 }
