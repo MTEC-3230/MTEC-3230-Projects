@@ -467,6 +467,10 @@ PrefabInstance:
       propertyPath: m_Clip.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 0137482f623b42b4ba5e66b2adf0f595, type: 3}
+    - target: {fileID: 4714668659027462135, guid: 1b48f4f165bee21409eddbe6ff510104, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4714668659038509699, guid: 1b48f4f165bee21409eddbe6ff510104, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
