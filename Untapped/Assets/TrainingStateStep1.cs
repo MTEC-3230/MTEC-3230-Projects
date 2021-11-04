@@ -16,6 +16,16 @@ public class TrainingStateStep1 : TrainingState//: IState
     //private AudioSource audioSource;
 
 
+    private void Start()
+    {
+        ParticlePour.OnPour += CompleteStep;
+    }
+
+
+    public void CompleteStep()
+    {
+        completedSuccesfully = true; 
+    }
     public TrainingStateStep1(TrainingManager manager)
     {
         _stateName = "Tutorial Step 1";
