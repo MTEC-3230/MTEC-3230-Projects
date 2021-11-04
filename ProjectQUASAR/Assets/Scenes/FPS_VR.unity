@@ -2071,7 +2071,7 @@ PrefabInstance:
     - target: {fileID: 1934775306, guid: ffb30ced127b0c04cbe41d75ff51151c, type: 3}
       propertyPath: AudioSource
       value: 
-      objectReference: {fileID: 2729281214152228924}
+      objectReference: {fileID: 1934775305}
     - target: {fileID: 1934775306, guid: ffb30ced127b0c04cbe41d75ff51151c, type: 3}
       propertyPath: PlayerCamera
       value: 
@@ -2145,7 +2145,7 @@ PrefabInstance:
         type: 3}
       propertyPath: AudioSource
       value: 
-      objectReference: {fileID: 2729281214152228924}
+      objectReference: {fileID: 1934775305}
     - target: {fileID: 5815447659098588674, guid: ffb30ced127b0c04cbe41d75ff51151c,
         type: 3}
       propertyPath: JetpackVfx.Array.data[0]
@@ -2178,11 +2178,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageMultiplier: 1
   SensibilityToSelfdamage: 0.25
+--- !u!114 &1934775300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934775298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b4c4e7c5d6cd34bb04cb46517b4e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Affiliation: 1
+  AimPoint: {fileID: 2083475757}
+--- !u!82 &1934775305 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1934775307, guid: ffb30ced127b0c04cbe41d75ff51151c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1934775297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1935557591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4477206535605542485, guid: 509d754db50222f46b673c4778f267e4,
     type: 3}
   m_PrefabInstance: {fileID: 1647969997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2083475757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3625601170703586302, guid: 761cdc9e4e883334cbdcea062d0befa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2729281214152228920}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2091206812 stripped
 Transform:
@@ -4101,12 +4127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Id: b7ef103c-6e78-41af-8322-5ac95ed05882
---- !u!82 &2729281214152228924 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1272397862697293493, guid: 761cdc9e4e883334cbdcea062d0befa7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2729281214152228920}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2729281214182533258
 PrefabInstance:
   m_ObjectHideFlags: 0
