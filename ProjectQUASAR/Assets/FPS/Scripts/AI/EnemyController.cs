@@ -97,7 +97,27 @@ namespace Unity.FPS.AI
         MaterialPropertyBlock m_EyeColorMaterialPropertyBlock;
 
         public PatrolPath PatrolPath { get; set; }
-        public GameObject KnownDetectedTarget => DetectionModule.KnownDetectedTarget;
+        //public GameObject KnownDetectedTarget => DetectionModule.KnownDetectedTarget;
+
+        //[SerializeField]
+        private GameObject m_KnownDetectedTarget;
+
+        public GameObject KnownDetectedTarget
+        {
+            get
+            {
+                m_KnownDetectedTarget = DetectionModule.KnownDetectedTarget;
+                return m_KnownDetectedTarget;
+            }
+            set
+            {
+                m_KnownDetectedTarget = value; 
+                DetectionModule.KnownDetectedTarget = value; 
+            }
+        }
+
+
+         
         public bool IsTargetInAttackRange => DetectionModule.IsTargetInAttackRange;
         public bool IsSeeingTarget => DetectionModule.IsSeeingTarget;
         public bool HadKnownTarget => DetectionModule.HadKnownTarget;
