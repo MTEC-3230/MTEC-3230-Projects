@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class Arrow : XRGrabInteractable
 {
-    public float speed = 1000f;
+    public float speed = 5000f;
     public Transform tip;
     bool inAir = false;
     Vector3 lastPosition = Vector3.zero;
@@ -39,7 +39,22 @@ public class Arrow : XRGrabInteractable
     {
         if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo))
         {
-            if(hitInfo.transform.TryGetComponent(out Rigidbody body))
+
+
+            if (hitInfo.transform.gameObject.TryGetComponent<Target>(out Target target))
+            {
+                target.AddScore();
+                Stop();
+
+                var emptyObject = new GameObject();
+                emptyObject.transform.parent = target.transform;
+                this.transform.parent = emptyObject.transform;
+
+
+                return;
+            }
+
+            if (hitInfo.transform.TryGetComponent(out Rigidbody body))
             {
                 if (body.TryGetComponent<Lantern>(out Lantern lantern))
                     lantern.TurnOn();
@@ -49,21 +64,34 @@ public class Arrow : XRGrabInteractable
                     potion.BreakPotion();
                     return;
                 }
+
+
+
+
                 rb.interpolation = RigidbodyInterpolation.None;
                 transform.parent = hitInfo.transform;
                 body.AddForce(rb.velocity, ForceMode.Impulse);
             }
-            Stop();
+            //Stop();
         }
     }
-    private void Stop()
-    {
-        inAir = false;
-        SetPhysics(false);
+    //private void Stop()
+    //{
+    //    inAir = false;
+    //    SetPhysics(false);
 
-        ArrowParticles(false);
-        ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
+    //    ArrowParticles(false);
+    //    ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
+    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "target")
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("target hit");
+        }
     }
+
 
     public void Release(float value)
     {

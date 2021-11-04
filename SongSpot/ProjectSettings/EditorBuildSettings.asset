@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ARInteraction_MultipleObjects.unity
-    guid: 858d023a14f3c428ea45b63078452410
+    path: Assets/Scenes/SongSpotNonAR.unity
+    guid: 8134eb05979d50548ace3dace7048077
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 921e435a23524e148b2047edcf62276e, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: eef1fbc3356956749a96835110d20d58, type: 2}
