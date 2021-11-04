@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VodkaBottle
       objectReference: {fileID: 0}
+    - target: {fileID: 4643863807761105294, guid: 68a7c103026cebe42954f1b47ec4a972, type: 3}
+      propertyPath: m_TagString
+      value: Bottle
+      objectReference: {fileID: 0}
     - target: {fileID: 6363172358139082066, guid: 68a7c103026cebe42954f1b47ec4a972, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -8,6 +8,7 @@ public class Mixer : MonoBehaviour
 
     public string ID;
     public Color color1;
+    private RecipeList recipes;
     
     public List<Drink> mixerList = new List<Drink>();
     
@@ -17,6 +18,7 @@ public class Mixer : MonoBehaviour
     void Start()
     {
         thisRenderer = this.GetComponent<Renderer>();
+        recipes = GameObject.Find("RecipeManager").GetComponent<RecipeList>();
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class Mixer : MonoBehaviour
         }
         else
         {
-            Drink newDrink = evaluateDrinkMix();
+            Drink newDrink = recipes.PourRecipe(this.gameObject, mixerList[0], mixerList[1]);
             if (newDrink != null)
             {
                 mixerList.Clear();
@@ -43,44 +45,5 @@ public class Mixer : MonoBehaviour
         {
             thisRenderer.material.color = color1;
         }
-    }
-
-    Drink evaluateDrinkMix()
-    {
-        if (containsVodka() && containsOJ())
-        {
-            Screwdriver sc = gameObject.AddComponent(typeof(Screwdriver)) as Screwdriver;
-            return sc;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    bool containsVodka()
-    {
-        foreach (Drink d in mixerList)
-        {
-            if (d is Vodka)
-            {
-                return true; 
-            }
-        }
-
-        return false;
-    }
-    
-    bool containsOJ()
-    {
-        foreach (Drink d in mixerList)
-        {
-            if (d is OrangeJuice)
-            {
-                return true; 
-            }
-        }
-
-        return false;
     }
 }

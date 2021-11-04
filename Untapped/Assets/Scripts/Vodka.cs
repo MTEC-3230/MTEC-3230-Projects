@@ -6,7 +6,7 @@ using UnityEngine;
 public class Vodka : Drink
 {
 
-    private static string NAME = "Vodka";
+    public static string NAME = "Vodka";
     private static Color COLOR = new Color(1f, 1f, 1f, 0.6f);
     void Start()
     {
