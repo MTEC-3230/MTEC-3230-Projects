@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7284101615912685168}
   - component: {fileID: 6362566135978329595}
   - component: {fileID: 7905033123931419382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7770594767211711658}
   - component: {fileID: 1752642303933678727}
   - component: {fileID: 5178078006398485163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5014,7 +5014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7829741186962108687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5047,7 +5047,7 @@ GameObject:
   - component: {fileID: 2970420953134107040}
   - component: {fileID: 7245757433825309134}
   - component: {fileID: 8242999468954956082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9932,9 +9932,9 @@ GameObject:
   - component: {fileID: 9176326005130664436}
   - component: {fileID: 1753998380549932820}
   - component: {fileID: 554311838281975191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arrow
-  m_TagString: arrow
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10059,7 +10059,7 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
-  speed: 50
+  speed: 30
   tip: {fileID: 7829741186962108687}
   sphereCollider: {fileID: 554311838281975191}
   trailParticle: {fileID: 7770594767211711658}
@@ -10075,11 +10075,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9176326005130664437}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.09, y: 0.04, z: 0.7636628}
-  m_Center: {x: -0.00031754375, y: 0.00076535344, z: 0.08744544}
+  m_Size: {x: 0.09, y: 0.04, z: 0.73412323}
+  m_Center: {x: -0.00031754375, y: 0.00076535344, z: 0.072675645}
 --- !u!135 &554311838281975191
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10088,7 +10088,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9176326005130664437}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
@@ -10102,7 +10102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9176326005522461768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attach Point
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
