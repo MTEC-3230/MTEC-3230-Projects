@@ -38,7 +38,7 @@ public enum TutorialSteps
 
 };
 
-public class BarTenderTraining : MonoBehaviour//: StateMachine
+public class BarTenderTraining : TrainingManager//: StateMachine
 {
 
     // Treat the Training Manager like a FSM. 

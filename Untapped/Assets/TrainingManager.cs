@@ -8,26 +8,7 @@ using System.Linq;
 using UnityEngine.Playables;
 
 
-public enum TrainingTutorialSteps
-{
 
-    TutorialDrillState,         //  Step 1 How to use a drill
-    TutorialScrewDriverState,   //  Step 2 How to use a screwdriver
-    TutorialPickupWoodState,     // Step 3 How to pick up wood
-    TutorialAlignWoodState,
-    TutorialPickupDrillState,
-    TutorialUseDrillState,
-
-
-    TrainingPicksupWoodState,
-    TrainingAlignsWoodState,
-    TrainingDrillWoodState,
-    TrainingPlacesScrewState,
-    TrainingScrewDriverState,
-    TrainingTightenScrewState,
-    TrainingCompleted,
-
-};
 
 public class TrainingManager : MonoBehaviour//: StateMachine
 {
@@ -37,33 +18,31 @@ public class TrainingManager : MonoBehaviour//: StateMachine
     // We can return to each step if the trainee is having difficulty with a particular stage. 
 
 
-    public PlayableDirector director;
+    //public PlayableDirector director;
 
 
 
     void OnEnable()
     {
-        director.played += OnPlayableDirectorPlayed;
+        //director.played += OnPlayableDirectorPlayed;
     }
 
     void OnPlayableDirectorPlayed(PlayableDirector aDirector)
     {
-        if (director == aDirector)
-            Debug.Log("PlayableDirector named " + aDirector.name + " is now playing.");
+        //if (director == aDirector)
+        //    Debug.Log("PlayableDirector named " + aDirector.name + " is now playing.");
     }
 
     void OnDisable()
     {
-        director.played -= OnPlayableDirectorPlayed;
+        //director.played -= OnPlayableDirectorPlayed;
     }
 
 
+    //public AudioSource audioSource;
 
-
-    public AudioSource audioSource;
-
-    public AudioClip introAudio1;
-    public AudioClip introAudio2;
+    //public AudioClip introAudio1;
+    //public AudioClip introAudio2;
 
     private Dictionary<TutorialSteps, TrainingState> dictionary = new Dictionary<TutorialSteps, TrainingState>();
 
@@ -71,19 +50,10 @@ public class TrainingManager : MonoBehaviour//: StateMachine
     private int _currentStateIndex;
 
 
-    TrainingState step1;
-    TrainingState step2;
-    TrainingState step3;
-    TrainingState step4;
-    TrainingState step5;
-    TrainingState step6;
-    TrainingState step7;
-    TrainingState step8;
-    TrainingState step9;
-    TrainingState step10;
-    TrainingState step11;
-    TrainingState step12;
-    TrainingState step13;
+    public TrainingStateStep1 step1;
+    public TrainingStateStep2 step2;
+    public TrainingStateStep3 step3;
+    public TrainingStateStep4 step4;
 
 
 
@@ -94,12 +64,6 @@ public class TrainingManager : MonoBehaviour//: StateMachine
 
 
     public TextDispay textDispay => display;
-
-
-    // 
-
-
-
 
 
     public void NextState()
@@ -122,19 +86,19 @@ public class TrainingManager : MonoBehaviour//: StateMachine
             SetState(_previousState); 
     }
 
-    IEnumerator PlayIntro()
-    {
-        audioSource.clip = introAudio1;
-        audioSource.Play();
-        yield return new WaitForSeconds(audioSource.clip.length);
+    //IEnumerator PlayIntro()
+    //{
+    //    audioSource.clip = introAudio1;
+    //    audioSource.Play();
+    //    yield return new WaitForSeconds(audioSource.clip.length);
 
-        audioSource.Stop();
-        audioSource.clip = introAudio2;
-        audioSource.Play();
-        yield return new WaitForSeconds(audioSource.clip.length);
+    //    audioSource.Stop();
+    //    audioSource.clip = introAudio2;
+    //    audioSource.Play();
+    //    yield return new WaitForSeconds(audioSource.clip.length);
 
-        SetupTraining();
-    }
+    //    SetupTraining();
+    //}
 
     public void SetupTraining()
     {
@@ -147,14 +111,10 @@ public class TrainingManager : MonoBehaviour//: StateMachine
     public void Start()
     {
         
-
-
-
-
         // Subscribe to events
 
-
-        StartCoroutine(PlayIntro()); 
+        // Play Intro 
+        //StartCoroutine(PlayIntro()); 
 
     }
 
@@ -162,78 +122,35 @@ public class TrainingManager : MonoBehaviour//: StateMachine
     public void Update()
     {
 
-        //if(Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    Debug.Log("Setting State to step 1.");
-        //    SetState(step1); 
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("Setting State to step 1.");
+            SetState(step1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
 
-        //    Debug.Log("Setting State to step 2.");
+            Debug.Log("Setting State to step 2.");
 
-        //    SetState(step2);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
+            SetState(step2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
 
-        //    Debug.Log("Setting State to step 3.");
+            Debug.Log("Setting State to step 3.");
 
-        //    SetState(step3);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha4))
-        //{
-
-
-        //    Debug.Log("Setting State to step 4.");
-
-        //    SetState(step4);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha5))
-        //{
+            SetState(step3);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
 
 
-        //    Debug.Log("Setting State to step 5.");
+            Debug.Log("Setting State to step 4.");
 
-        //    SetState(step5);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha6))
-        //{
+            SetState(step4);
+        }
 
 
-        //    Debug.Log("Setting State to step 6.");
-
-        //    SetState(step6);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha7))
-        //{
-        //    Debug.Log("Setting State to step 7.");
-
-        //    SetState(step7);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha8))
-        //{
-
-        //    Debug.Log("Setting State to step 8.");
-
-        //    SetState(step8);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha9))
-        //{
-
-
-        //    Debug.Log("Setting State to step 9.");
-
-        //    SetState(step9);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha0))
-        //{
-
-
-        //    Debug.Log("Setting State to step 1o.");
-
-        //    SetState(step10);
-        //}
 
 
     }
@@ -254,9 +171,6 @@ public class TrainingManager : MonoBehaviour//: StateMachine
 
         StopAllCoroutines(); 
 
-
-
-       // Debug.Log("Setting State : " + newState._stateName);
 
         _previousState = _currentState;
         _currentStateIndex = newState.index;

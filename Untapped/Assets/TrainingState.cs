@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class TrainingState : MonoBehaviour//: IState
 {
 
-    protected BarTenderTraining _manager;
+    public TrainingManager _manager;
     public int index = -1; 
     public string _stateName = "TraingingState" ;
     public bool completedSuccesfully;
@@ -14,7 +14,7 @@ public abstract class TrainingState : MonoBehaviour//: IState
     // Components don't call constructor :{
 
 
-    public virtual TrainingState TrainingStateConstructor(BarTenderTraining manager)
+    public virtual TrainingState TrainingStateConstructor(TrainingManager manager)
     {
         _manager = manager;
 
