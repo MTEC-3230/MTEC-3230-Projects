@@ -18,7 +18,35 @@ public class RecipeList : MonoBehaviour
         return null;
     }
     
+    public Drink PourRecipe(GameObject bottle, Drink drink1, Drink drink2, Drink drink3)
+    {
+        return null;
+    }
+    
     /*public delegate void
      
     */
+
+    public void Pour(GameObject a, GameObject b)
+    {
+        Mixer mixer1 = a.GetComponent<Mixer>();
+        Mixer mixer2 = b.GetComponent<Mixer>();
+
+        if (mixer1 == null || mixer2 == null)
+        {
+            Debug.Log("Something went wrong");
+            return;
+        }
+        
+        mixer2.mixerList.Add(mixer1.mixerList[0]);
+        Drink newDrink = PourRecipe(b.gameObject, mixer2.mixerList[0], mixer2.mixerList[1]);
+        if (newDrink != null)
+        {
+            mixer2.mixerList.Clear();
+            mixer2.mixerList.Add(newDrink);
+            mixer2.ID = mixer2.mixerList[0].getID();
+            mixer2.color1 = (mixer2.mixerList[0].getColor());
+        }
+    }
+    
 }

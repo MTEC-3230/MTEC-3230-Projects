@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Pour : MonoBehaviour
 {
+    private RecipeList recipes;
+    private Mixer m;
+
+    void Start()
+    {
+        recipes = GameObject.Find("RecipeManager").GetComponent<RecipeList>();
+    }
     
     // Update is called once per frame
     void FixedUpdate()
@@ -19,7 +26,7 @@ public class Pour : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag.Equals("Bottle"))
                 {
-                    
+                    recipes.Pour(this.gameObject, hit.transform.gameObject);
                 }
                 
             }

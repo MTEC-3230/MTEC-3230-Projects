@@ -6,7 +6,7 @@ using UnityEngine;
 public class Screwdriver : Drink
 {
 
-    private static string NAME = "Screwdriver";
+    public static string NAME = "Screwdriver";
     private static Color COLOR = new Color(1f, 0f, 0f, 1f);
     void Start()
     {
