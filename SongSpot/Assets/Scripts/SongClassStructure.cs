@@ -6,13 +6,8 @@ class MusicLibrary
     List<string> songs;
     List<string> artists;
     List<string> playlists;
+    
     void listSongs()
-    {
-    }
-    void listArtists()
-    {
-    }
-    void listPlaylists()
     {
     }
 }
@@ -29,7 +24,13 @@ class Songs : MusicLibrary
 }
 class Artists : MusicLibrary
 {
+    void listArtists()
+    {
+    }
 }
 class Playlists : MusicLibrary
 {
+    void listPlaylists()
+    {
+    }
 }
