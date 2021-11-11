@@ -6,12 +6,9 @@ public class Pour : MonoBehaviour
 {
     private RecipeList recipes;
     private Mixer m;
+    public delegate void OnPourDelegate(GameObject a, GameObject b);
+    public static OnPourDelegate OnPour;
 
-    void Start()
-    {
-        recipes = GameObject.Find("RecipeManager").GetComponent<RecipeList>();
-    }
-    
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -24,9 +21,10 @@ public class Pour : MonoBehaviour
             //todo- implement some sort of timer for pouring + particle system
             if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
             {
-                if (hit.transform.gameObject.tag.Equals("Bottle"))
+                if (hit.transform.gameObject.tag.Equals("Bottle") && !hit.transform.gameObject.Equals(this.gameObject))
                 {
-                    recipes.Pour(this.gameObject, hit.transform.gameObject);
+                    Debug.Log("hit");
+                    OnPour(this.gameObject, hit.transform.gameObject);
                 }
                 
             }

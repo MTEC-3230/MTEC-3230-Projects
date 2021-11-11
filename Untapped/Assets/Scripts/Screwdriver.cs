@@ -7,7 +7,7 @@ public class Screwdriver : Drink
 {
 
     public static string NAME = "Screwdriver";
-    private static Color COLOR = new Color(1f, 0f, 0f, 1f);
+    private static Color COLOR = new Color(1f, 0.6f, 0f, 0.8f);
     void Start()
     {
         this.setID(NAME);

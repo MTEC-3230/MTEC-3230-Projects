@@ -8,6 +8,11 @@ public class RecipeList : MonoBehaviour
     
     // Start is called before the first frame update
 
+    public void Start()
+    {
+        Pour.OnPour += aPour;
+    }
+
     public Drink PourRecipe(GameObject bottle, Drink drink1, Drink drink2)
     {
         if (drink1.ID.Equals(Vodka.NAME) && drink2.ID.Equals(OrangeJuice.NAME))
@@ -27,7 +32,7 @@ public class RecipeList : MonoBehaviour
      
     */
 
-    public void Pour(GameObject a, GameObject b)
+    public void aPour(GameObject a, GameObject b)
     {
         Mixer mixer1 = a.GetComponent<Mixer>();
         Mixer mixer2 = b.GetComponent<Mixer>();

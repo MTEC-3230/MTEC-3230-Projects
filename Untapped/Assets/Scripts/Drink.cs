@@ -6,6 +6,9 @@ public class Drink : MonoBehaviour
 {
     public string ID;
     public Color thisColor;
+    public static string EMPTYNAME = "Empty";
+    public static Color EMPTYCOLOR = new Color(0f, 0f, 0f, 0f);
+
 
     public Color getColor()
     {
