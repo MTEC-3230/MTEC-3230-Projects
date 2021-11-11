@@ -38,16 +38,15 @@ public class Arrow : XRGrabInteractable
     private void CheckCollision()
     {
 
-        int layermask = LayerMask.GetMask("bow");
+        int layermask = LayerMask.GetMask("Bow");
         layermask = ~layermask;
+
+        //if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo))
         if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo, layermask))
         {
-            if (hitInfo.transform.TryGetComponent(out Rigidbody body))
-
-            {
 
 
-                if (hitInfo.transform.gameObject.TryGetComponent<Target>(out Target target))
+            if (hitInfo.transform.gameObject.TryGetComponent<Target>(out Target target))
             {
                 target.AddScore();
                 Stop();
@@ -57,13 +56,11 @@ public class Arrow : XRGrabInteractable
                 this.transform.parent = emptyObject.transform;
 
                 this.GetComponent<XRGrabInteractable>().colliders.Clear();
-
-
-
                 return;
             }
 
-           
+            if (hitInfo.transform.TryGetComponent(out Rigidbody body))
+            {
                 if (body.TryGetComponent<Lantern>(out Lantern lantern))
                     lantern.TurnOn();
 
@@ -72,6 +69,10 @@ public class Arrow : XRGrabInteractable
                     potion.BreakPotion();
                     return;
                 }
+
+
+
+
                 rb.interpolation = RigidbodyInterpolation.None;
                 transform.parent = hitInfo.transform;
                 body.AddForce(rb.velocity, ForceMode.Impulse);
@@ -84,7 +85,7 @@ public class Arrow : XRGrabInteractable
         inAir = false;
         SetPhysics(false);
 
-       ArrowParticles(false);
+        ArrowParticles(false);
         ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
     }
     private void OnCollisionEnter(Collision collision)
@@ -107,7 +108,7 @@ public class Arrow : XRGrabInteractable
         lastPosition = tip.position;
 
         ArrowParticles(true);
-        ArrowSounds(launchClip, 4.2f + (.6f*value), 4.4f + (.6f*value),Mathf.Max(.7f,value), -1);
+        ArrowSounds(launchClip, 4.2f + (.6f * value), 4.4f + (.6f * value), Mathf.Max(.7f, value), -1);
     }
 
     private void SetPhysics(bool usePhysics)
@@ -162,13 +163,13 @@ public class Arrow : XRGrabInteractable
         }
         else
         {
-            trailParticle.Stop(); 
+            trailParticle.Stop();
             hitParticle.Play();
             trailRenderer.emitting = false;
         }
     }
 
-    void ArrowSounds(AudioClip clip, float minPitch, float maxPitch,float volume, int id)
+    void ArrowSounds(AudioClip clip, float minPitch, float maxPitch, float volume, int id)
     {
         SFXPlayer.Instance.PlaySFX(clip, transform.position, new SFXPlayer.PlayParameters()
         {
