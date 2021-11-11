@@ -11,5 +11,8 @@ public class Target : MonoBehaviour
         Debug.Log("Adding points " + points);
         ScoreManager.Instance.AddScore(points);
 
+        Debug.Log("game object " + gameObject.name);
+        
+        Destroy(gameObject); 
     }
 }
