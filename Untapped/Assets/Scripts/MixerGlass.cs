@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
 
-public class MixerGlass : MonoBehaviour
+public class MixerGlass : Mixer
 {
 
-    public string ID;
-    public Color color1;
-    private RecipeList recipes;
     private Transform glassFill;
-    
-    public List<Drink> mixerList = new List<Drink>();
-    
     private Renderer thisRenderer;
     
     // Start is called before the first frame update
@@ -20,6 +14,7 @@ public class MixerGlass : MonoBehaviour
     {
         glassFill = this.gameObject.transform.GetChild(0);
         thisRenderer = glassFill.GetComponent<Renderer>();
+        Debug.Log(glassFill.name);
     }
 
     // Update is called once per frame

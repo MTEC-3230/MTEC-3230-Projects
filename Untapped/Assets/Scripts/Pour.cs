@@ -16,14 +16,12 @@ public class Pour : MonoBehaviour
         
         if (Vector3.Dot(transform.up, Vector3.down) > 0.8)
         {
-            Debug.Log("Pouring");
             //when pouring
             //todo- implement some sort of timer for pouring + particle system
             if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
             {
                 if (hit.transform.gameObject.tag.Equals("Bottle") && !hit.transform.gameObject.Equals(this.gameObject))
                 {
-                    Debug.Log("hit");
                     OnPour(this.gameObject, hit.transform.gameObject);
                 }
                 
