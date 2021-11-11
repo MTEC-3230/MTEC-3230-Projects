@@ -37,9 +37,34 @@ public class Arrow : XRGrabInteractable
 
     private void CheckCollision()
     {
-        if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo))
+
+        int layermask = LayerMask.GetMask("bow");
+        layermask = ~layermask;
+        if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo, layermask))
         {
+<<<<<<< Updated upstream
             if(hitInfo.transform.TryGetComponent(out Rigidbody body))
+=======
+
+
+            if (hitInfo.transform.gameObject.TryGetComponent<Target>(out Target target))
+            {
+                target.AddScore();
+                Stop();
+
+                var emptyObject = new GameObject();
+                emptyObject.transform.parent = target.transform;
+                this.transform.parent = emptyObject.transform;
+
+                this.GetComponent<XRGrabInteractable>().colliders.Clear();
+
+
+
+                return;
+            }
+
+            if (hitInfo.transform.TryGetComponent(out Rigidbody body))
+>>>>>>> Stashed changes
             {
                 if (body.TryGetComponent<Lantern>(out Lantern lantern))
                     lantern.TurnOn();
@@ -53,17 +78,17 @@ public class Arrow : XRGrabInteractable
                 transform.parent = hitInfo.transform;
                 body.AddForce(rb.velocity, ForceMode.Impulse);
             }
-            //Stop();
+            Stop();
         }
     }
-    //private void Stop()
-    //{
-    //    inAir = false;
-    //    SetPhysics(false);
+    private void Stop()
+    {
+        inAir = false;
+        SetPhysics(false);
 
-    //    ArrowParticles(false);
-    //    ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
-    //}
+       ArrowParticles(false);
+        ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "target")

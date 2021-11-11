@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7284101615912685168}
   - component: {fileID: 6362566135978329595}
   - component: {fileID: 7905033123931419382}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7770594767211711658}
   - component: {fileID: 1752642303933678727}
   - component: {fileID: 5178078006398485163}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5014,7 +5014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7829741186962108687}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5047,7 +5047,7 @@ GameObject:
   - component: {fileID: 2970420953134107040}
   - component: {fileID: 7245757433825309134}
   - component: {fileID: 8242999468954956082}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HitParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9932,7 +9932,7 @@ GameObject:
   - component: {fileID: 9176326005130664436}
   - component: {fileID: 1753998380549932820}
   - component: {fileID: 554311838281975191}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10059,7 +10059,7 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
-  speed: 30
+  speed: 50
   tip: {fileID: 7829741186962108687}
   sphereCollider: {fileID: 554311838281975191}
   trailParticle: {fileID: 7770594767211711658}
@@ -10102,7 +10102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9176326005522461768}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Attach Point
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -10170,6 +10170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitParticle_Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 3045517018489809931, guid: bacaa7f563eef2b4a93ca41f1e67908a, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4057184306579744763, guid: bacaa7f563eef2b4a93ca41f1e67908a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10212,6 +10216,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4057184306579744763, guid: bacaa7f563eef2b4a93ca41f1e67908a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413097783964106700, guid: bacaa7f563eef2b4a93ca41f1e67908a, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4413097783964106700, guid: bacaa7f563eef2b4a93ca41f1e67908a, type: 3}
