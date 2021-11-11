@@ -42,12 +42,12 @@ public class Arrow : XRGrabInteractable
         layermask = ~layermask;
         if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo, layermask))
         {
-<<<<<<< Updated upstream
-            if(hitInfo.transform.TryGetComponent(out Rigidbody body))
-=======
+            if (hitInfo.transform.TryGetComponent(out Rigidbody body))
+
+            {
 
 
-            if (hitInfo.transform.gameObject.TryGetComponent<Target>(out Target target))
+                if (hitInfo.transform.gameObject.TryGetComponent<Target>(out Target target))
             {
                 target.AddScore();
                 Stop();
@@ -63,9 +63,7 @@ public class Arrow : XRGrabInteractable
                 return;
             }
 
-            if (hitInfo.transform.TryGetComponent(out Rigidbody body))
->>>>>>> Stashed changes
-            {
+           
                 if (body.TryGetComponent<Lantern>(out Lantern lantern))
                     lantern.TurnOn();
 
