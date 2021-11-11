@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -407,9 +407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee13b3bf9880e64fb7d749c3867c698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songName: Stronger
-  artistName: Kanye West
-  audioClip: {fileID: 8300000, guid: 0137482f623b42b4ba5e66b2adf0f595, type: 3}
 --- !u!65 &884042768
 BoxCollider:
   m_ObjectHideFlags: 0
