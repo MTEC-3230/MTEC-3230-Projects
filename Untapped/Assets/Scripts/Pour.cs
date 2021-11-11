@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pour : MonoBehaviour
 {
     private RecipeList recipes;
-    private Mixer m;
+    private Glass m;
     public delegate void OnPourDelegate(GameObject a, GameObject b);
     public static OnPourDelegate OnPour;
 
@@ -18,7 +18,14 @@ public class Pour : MonoBehaviour
         {
             //when pouring
             //todo- implement some sort of timer for pouring + particle system
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
+
+            Transform cap = this.gameObject.transform.GetChild(0);
+            if (cap.name != "Cap")
+            {
+                cap = this.gameObject.transform;
+            }
+            
+            if (Physics.Raycast(cap.position, Vector3.down, out hit, Mathf.Infinity))
             {
                 if (hit.transform.gameObject.tag.Equals("Bottle") && !hit.transform.gameObject.Equals(this.gameObject))
                 {

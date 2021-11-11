@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drink : MonoBehaviour
+public abstract class Drink : MonoBehaviour
 {
     public string ID;
     public Color thisColor;
     public static string EMPTYNAME = "Empty";
     public static Color EMPTYCOLOR = new Color(0f, 0f, 0f, 0f);
 
+    public abstract Drink Mix();
 
     public Color getColor()
     {

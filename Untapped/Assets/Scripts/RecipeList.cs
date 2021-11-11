@@ -13,45 +13,60 @@ public class RecipeList : MonoBehaviour
         Pour.OnPour += aPour;
     }
 
-    public Drink PourRecipe(GameObject bottle, Drink drink1, Drink drink2)
+    public Drink PourRecipe(GameObject bottle)
     {
-        if (drink1.ID.Equals(Vodka.NAME) && drink2.ID.Equals(OrangeJuice.NAME))
+        Glass mix = bottle.GetComponent<Glass>();
+        if (mix == null)
         {
-            return bottle.AddComponent<Screwdriver>();
+            Debug.Log("Something went wrong");
+            return null;
         }
 
+        Drink newDrink;
+
+        for (int i = 0; i < mix.mixerList.Count; i++)
+        {
+            newDrink = mix.mixerList[i].Mix();
+            if (newDrink != null)
+            {
+                Debug.Log(newDrink.getID());
+                return newDrink;
+            }
+        }
         return null;
     }
-    
-    public Drink PourRecipe(GameObject bottle, Drink drink1, Drink drink2, Drink drink3)
-    {
-        return null;
-    }
-    
-    /*public delegate void
-     
-    */
 
     public void aPour(GameObject a, GameObject b)
     {
-        Mixer mixer1 = a.GetComponent<Mixer>();
-        Mixer mixer2 = b.GetComponent<Mixer>();
+        Glass pourFrom = a.GetComponent<Glass>();
+        Glass pourInto = b.GetComponent<Glass>();
 
-        if (mixer1 == null || mixer2 == null)
+        if (pourFrom == null || pourInto == null)
         {
             Debug.Log("Something went wrong");
             return;
         }
-        
-        mixer2.mixerList.Add(mixer1.mixerList[0]);
-        Drink newDrink = PourRecipe(b.gameObject, mixer2.mixerList[0], mixer2.mixerList[1]);
+
+        bool doNotAdd = false;
+        for (int i = 0; i < pourInto.mixerList.Count; i++)
+        {
+            if (pourInto.mixerList[i].name.Equals(pourFrom.mixerList[0].name))
+            {
+                doNotAdd = true;
+            }
+        }
+        if (!doNotAdd)
+        {
+            pourInto.mixerList.Add(pourFrom.mixerList[0]);
+        }
+
+        Drink newDrink = PourRecipe(b.gameObject);
         if (newDrink != null)
         {
-            mixer2.mixerList.Clear();
-            mixer2.mixerList.Add(newDrink);
-            mixer2.ID = mixer2.mixerList[0].getID();
-            mixer2.color1 = (mixer2.mixerList[0].getColor());
+            pourInto.mixerList.Clear();
+            pourInto.mixerList.Add(newDrink);
+            pourInto.ID = pourInto.mixerList[0].getID();
+            pourInto.color1 = (pourInto.mixerList[0].getColor());
         }
     }
-    
 }
