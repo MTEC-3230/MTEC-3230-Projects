@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Unity.FPS.Game.Actor">
+    <Position X="4.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAQACAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Actor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.AudioUtility" Collapsed="true">
+    <Position X="18.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEQgCAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\AudioUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.ConstantRotation" Collapsed="true">
+    <Position X="17.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\ConstantRotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.DebugUtility" Collapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAgAAAAAAAAAAABAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\DebugUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.Events" Collapsed="true">
+    <Position X="7.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAGAAAAAAAAAAQASAAAAAQAAAAAAAAgAg=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.ObjectiveUpdateEvent" Collapsed="true">
+    <Position X="7.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQkAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.AllObjectivesCompletedEvent" Collapsed="true">
+    <Position X="5.5" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.GameOverEvent" Collapsed="true">
+    <Position X="13.5" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.PlayerDeathEvent" Collapsed="true">
+    <Position X="5.5" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.EnemyKillEvent" Collapsed="true">
+    <Position X="7.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.PickupEvent" Collapsed="true">
+    <Position X="10" Y="18.25" Width="1.5" />
+    <InheritanceLine Type="Unity.FPS.Game.GameEvent" FixedToPoint="true">
+      <Path>
+        <Point X="5" Y="16.312" />
+        <Point X="5" Y="17.95" />
+        <Point X="10.75" Y="17.95" />
+        <Point X="10.75" Y="18.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.AmmoPickupEvent" Collapsed="true">
+    <Position X="9" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.DamageEvent" Collapsed="true">
+    <Position X="11" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.DisplayMessageEvent" Collapsed="true">
+    <Position X="3.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.GameConstants" Collapsed="true">
+    <Position X="24" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAMAAgACAAIAAAAAFAACBAEIAAAIQAAAJRBA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\GameConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.IgnoreHeatMap" Collapsed="true">
+    <Position X="14.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\IgnoreHeatMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.IgnoreHitDetection">
+    <Position X="2.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\IgnoreHitDetection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.ActorsManager" Collapsed="true">
+    <Position X="15.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAAAQAAAEA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Managers\ActorsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.AudioManager" Collapsed="true">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAgAAAAAAAAAAAAAAAAAAQEAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Managers\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.GameEvent" Collapsed="true">
+    <Position X="4.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Managers\EventManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.EventManager" Collapsed="true">
+    <Position X="14.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAECAABAAAAABAAAAAAAAIAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Managers\EventManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.GameFlowManager" Collapsed="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwBAAAAASACAAAAQAAgAEAAIAAAQAAAAIAQAwARAEA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Managers\GameFlowManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.ObjectiveManager" Collapsed="true">
+    <Position X="10" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEQBAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Managers\ObjectiveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.MeshCombiner" Collapsed="true">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACIAAAAAAAAAAAEAAAQAAAgAAgABAMYAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\MeshCombiner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.MeshCombineUtility" Collapsed="true">
+    <Position X="24" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\MeshCombineUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.PrefabReplacer">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="Unity.FPS.Game.PrefabReplacer.ReplacementDefinition" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\FPS\Scripts\Game\PrefabReplacer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\PrefabReplacer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.PrefabReplacerOnInstance">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\PrefabReplacerOnInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.Damageable" Collapsed="true">
+    <Position X="17" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAASAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\Damageable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.DamageArea" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAIAAAAAAACAAQAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\DamageArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.Destructable" Collapsed="true">
+    <Position X="17.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\Destructable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.Health" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKEAAAAAWACCACAAAAAAAQIEAAAAAAAAAAAigAAABA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\Health.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.Objective" Collapsed="true">
+    <Position X="19" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABEAACIgAEAAAAAAAAAAAAAAKBAAIACAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\Objective.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.ProjectileBase">
+    <Position X="11.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAQAAABIQAAAAAAAAAAAAAAAIAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\ProjectileBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.WeaponController">
+    <Position X="21" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIQRRBHyTigiAXgOI4QAikAgVCBMgAiWSAAAAG5AHGU=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\WeaponController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unity.FPS.Game.TimedSelfDestruct">
+    <Position X="13.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\TimedSelfDestruct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Struct Name="Unity.FPS.Game.MinMaxFloat">
+    <Position X="25.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAJAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\MinMaxParameters.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Unity.FPS.Game.MinMaxColor">
+    <Position X="24" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAJAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\MinMaxParameters.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Unity.FPS.Game.MinMaxVector3">
+    <Position X="27.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAJAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\MinMaxParameters.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Unity.FPS.Game.CrosshairData">
+    <Position X="24" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\WeaponController.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Unity.FPS.Game.WeaponShootType">
+    <Position X="24" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAQAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FPS\Scripts\Game\Shared\WeaponController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
