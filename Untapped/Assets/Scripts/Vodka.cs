@@ -17,9 +17,9 @@ public class Vodka : Drink
     public override Drink Mix()
     {
         Glass thisGlass = this.gameObject.GetComponent<Glass>();
-        for (int i = 0; i < thisGlass.mixerList.Count; i++)
+        for (int i = 0; i < thisGlass.currentDrinks.Count; i++)
         {
-            if (thisGlass.mixerList[i].getID().Equals("Orange Juice"))
+            if (thisGlass.currentDrinks[i].getID().Equals("Orange Juice"))
             {
                 return thisGlass.gameObject.AddComponent<Screwdriver>();
             }

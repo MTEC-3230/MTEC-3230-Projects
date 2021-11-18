@@ -16,6 +16,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7691121056285745237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287084837316123535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04895127, y: 0.1177156, z: 0.048951276}
+  m_Center: {x: -0.0000000018626451, y: 0.058857806, z: -0.0000000037252903}
 --- !u!114 &5158699914317042680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +135,18 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &5402089762899331045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287084837316123535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfeaf5fa2a231b47bc17bc1e013e0a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6830289095556835164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,35 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 
   color1: {r: 0, g: 0, b: 0, a: 0}
-  emptyID: Empty
-  EMPTYCOLOR: {r: 0, g: 0, b: 0, a: 0}
-  hasFill: 1
   mixerList: []
---- !u!114 &5402089762899331045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3287084837316123535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdfeaf5fa2a231b47bc17bc1e013e0a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &7691121056285745237
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3287084837316123535}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.04895127, y: 0.1177156, z: 0.048951276}
-  m_Center: {x: -0.0000000018626451, y: 0.058857806, z: -0.0000000037252903}
 --- !u!1001 &2022168489406702372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,7 +219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4669108941839695906, guid: 5839ba2536426324c8c7039f5247cbb4, type: 3}
       propertyPath: m_Name
-      value: EmptyGlassFill
+      value: Liquid
       objectReference: {fileID: 0}
     - target: {fileID: 4669108941839695906, guid: 5839ba2536426324c8c7039f5247cbb4, type: 3}
       propertyPath: m_TagString

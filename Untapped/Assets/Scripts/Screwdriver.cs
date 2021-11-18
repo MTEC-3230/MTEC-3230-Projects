@@ -8,8 +8,10 @@ public class Screwdriver : Drink
     
     public static string NAME = "Screwdriver";
     private static Color COLOR = new Color(1f, 0.6f, 0.4f, 0.8f);
+    
     void Start()
     {
+        components = new List<Drink> {new OrangeJuice(), new Vodka()};
         this.setID(NAME);
         this.setColor(COLOR);
     }

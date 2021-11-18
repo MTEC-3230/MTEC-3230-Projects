@@ -8,35 +8,102 @@ public class Glass : MonoBehaviour
 
     public string ID;
     public Color color1;
-    private RecipeList recipes;
     
-    public List<Drink> mixerList = new List<Drink>();
+    //list of current drinks in the glass
+    public List<Drink> currentDrinks = new List<Drink>();
+    public Drink currentMixedDrink;
     
+    //if it has at least one drink in it- this becomes the current recipes involving that drink?
+    public Transform Liquid;
     private Renderer thisRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        thisRenderer = this.GetComponent<Renderer>();
+        Liquid = this.gameObject.transform.Find("Liquid");
+        thisRenderer = Liquid.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mixerList.Count == 0)
+        if (currentDrinks.Count == 0)
         {
             this.ID = Drink.EMPTYNAME;
             this.color1 = Drink.EMPTYCOLOR;
         }
-        else if (mixerList.Count == 1 || mixerList[0].getID().Equals(Screwdriver.NAME))
+        else
         {
-            this.ID = (mixerList[0].getID());
-            this.color1 = (mixerList[0].getColor());
+            MixColor();
+            Drink newDrink = CheckForRecipe();
+            if (newDrink != null)
+            {
+                addRecipe(newDrink);
+            }
         }
+        thisRenderer.material.color = color1;
+    }
 
-        if (thisRenderer != null)
+    public void AddDrink(Drink d)
+    {
+        this.currentDrinks.Add(d);
+    }
+    
+    public void RemoveDrink(Drink d)
+    {
+        this.currentDrinks.Remove(d);
+    }
+
+    private void MixColor()
+    {
+        if (currentMixedDrink != null)
         {
-            thisRenderer.material.color = color1;
+            this.color1 = currentMixedDrink.getColor();
+        }
+        else
+        {
+            Color newColor = new Color(0, 0, 0, 0);
+            foreach (Drink d in this.currentDrinks)
+            {
+                newColor += d.getColor();
+            }
+
+            this.color1 = newColor;
         }
     }
+
+    private Drink CheckForRecipe()
+    {
+        if (currentDrinks.Count == 1)
+        {
+            this.ID = currentDrinks[0].ID;
+            this.color1 = currentDrinks[0].getColor();
+            return null;
+        }
+        //Check all recipes in the dictionary
+        foreach (KeyValuePair<string, Drink> k in BarManager.Instance.MasterRecipeList)
+        {
+            bool hasRecipeContents = true;
+            foreach (Drink d in k.Value.components)
+            {
+                if (!currentDrinks.Contains(d))
+                {
+                    hasRecipeContents = false;
+                    break;
+                }
+            }
+            if (hasRecipeContents)
+            {
+                return k.Value;
+            }
+        }
+
+        return null;
+    }
+
+    private void addRecipe(Drink d)
+    {
+        currentMixedDrink = d;
+    }
+
 }

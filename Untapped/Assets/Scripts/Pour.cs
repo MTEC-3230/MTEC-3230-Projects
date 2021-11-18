@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pour : MonoBehaviour
 {
-    private RecipeList recipes;
+    
     private Glass m;
     public delegate void OnPourDelegate(GameObject a, GameObject b);
     public static OnPourDelegate OnPour;
