@@ -14,7 +14,7 @@ public class Glass : MonoBehaviour
     public Drink currentMixedDrink;
     
     //if it has at least one drink in it- this becomes the current recipes involving that drink?
-    public Transform Liquid;
+    private Transform Liquid;
     private Renderer thisRenderer;
 
     // Start is called before the first frame update
