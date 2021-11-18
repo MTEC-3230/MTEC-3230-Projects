@@ -6,13 +6,10 @@ public abstract class Drink : MonoBehaviour
 {
     public string ID;
     public Color thisColor;
-    public int value;
     public static string EMPTYNAME = "Empty";
     public static Color EMPTYCOLOR = new Color(0f, 0f, 0f, 0f);
     public List<Drink> components;
     
-    public abstract Drink Mix();
-
     public Color getColor()
     {
         return thisColor;

@@ -51,31 +51,8 @@ using UnityEngine;
 
     public void Start()
     {
-        MasterRecipeList.Add("Screwdriver", new Screwdriver());
+        MasterRecipeList.Add("Screwdriver", gameObject.AddComponent<Screwdriver>());
         Pour.OnPour += aPour;
-    }
-
-    public Drink MixThings(GameObject bottle)
-    {
-        Glass mix = bottle.GetComponent<Glass>();
-        if (mix == null)
-        {
-            Debug.Log("Something went wrong");
-            return null;
-        }
-
-        Drink newDrink;
-
-        for (int i = 0; i < mix.currentDrinks.Count; i++)
-        {
-            newDrink = mix.currentDrinks[i].Mix();
-            if (newDrink != null)
-            {
-                Debug.Log(newDrink.getID());
-                return newDrink;
-            }
-        }
-        return null;
     }
 
     public void aPour(GameObject a, GameObject b)
@@ -92,7 +69,7 @@ using UnityEngine;
         bool doNotAdd = false;
         for (int i = 0; i < pourInto.currentDrinks.Count; i++)
         {
-            if (pourInto.currentDrinks[i].name.Equals(pourFrom.currentDrinks[0].name))
+            if (pourInto.currentDrinks[i].ID.Equals(pourFrom.currentDrinks[0].ID))
             {
                 doNotAdd = true;
             }

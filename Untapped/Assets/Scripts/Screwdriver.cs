@@ -11,13 +11,8 @@ public class Screwdriver : Drink
     
     void Start()
     {
-        components = new List<Drink> {new OrangeJuice(), new Vodka()};
+        components = new List<Drink> {gameObject.AddComponent<OrangeJuice>(), gameObject.AddComponent<Vodka>()};
         this.setID(NAME);
         this.setColor(COLOR);
-    }
-
-    public override Drink Mix()
-    {
-        throw new System.NotImplementedException();
     }
 }

@@ -14,8 +14,4 @@ public class RedBullVodka : Drink
         this.setColor(COLOR);
     }
     
-    public override Drink Mix()
-    {
-        throw new System.NotImplementedException();
-    }
 }

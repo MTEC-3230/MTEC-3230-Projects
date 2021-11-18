@@ -13,18 +13,4 @@ public class Vodka : Drink
         this.setID(NAME);
         this.setColor(COLOR);
     }
-
-    public override Drink Mix()
-    {
-        Glass thisGlass = this.gameObject.GetComponent<Glass>();
-        for (int i = 0; i < thisGlass.currentDrinks.Count; i++)
-        {
-            if (thisGlass.currentDrinks[i].getID().Equals("Orange Juice"))
-            {
-                return thisGlass.gameObject.AddComponent<Screwdriver>();
-            }
-        }
-
-        return null;
-    }
 }
