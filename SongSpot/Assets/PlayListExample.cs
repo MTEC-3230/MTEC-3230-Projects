@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayListExample : MonoBehaviour
+public class PlaylistExample : MonoBehaviour
 {
 
-    public PlayList playList; 
+    public Playlist playlist;
+    public PlaylistUI playlistView;
+
 
     public List<Song> songs ; 
     private void Start()
@@ -17,9 +19,9 @@ public class PlayListExample : MonoBehaviour
 
         var song1 = new GameObject().AddComponent<Song>().Initialize("Song1", "artist1", null);
 
-        var song2 = new GameObject().AddComponent<Song>().Initialize("Song2", "artist1", null);
-        var song3 = new GameObject().AddComponent<Song>().Initialize("Song3", "artist1", null);
-        var song4 = new GameObject().AddComponent<Song>().Initialize("Song4", "artist1", null);
+        var song2 = new GameObject().AddComponent<Song>().Initialize("Song2", "artist2", null);
+        var song3 = new GameObject().AddComponent<Song>().Initialize("Song3", "artist3", null);
+        var song4 = new GameObject().AddComponent<Song>().Initialize("Song4", "artist4", null);
 
         songs.Add(song1);
         songs.Add(song2);
@@ -28,12 +30,14 @@ public class PlayListExample : MonoBehaviour
 
 
         var go = new GameObject();
-        go.AddComponent<PlayList>();
-        go.name = "PlayList";
+        go.AddComponent<Playlist>();
+        go.name = "Playlist";
 
-        playList = go.GetComponent<PlayList>();
+        playlist = go.GetComponent<Playlist>();
 
-        playList.playListSongs = songs;
+        playlist.playListSongs = songs;
+
+
 
 
 

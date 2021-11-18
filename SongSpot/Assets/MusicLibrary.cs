@@ -4,15 +4,46 @@ using UnityEngine;
 
 public class MusicLibrary : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public List<Song> librarySongList;
+
+    public Dictionary<string, Song> library; 
+
+
+    // Music Library is a Singleton for now. 
+    private static MusicLibrary _instance;
+
+    public static MusicLibrary Instance
     {
-        
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<MusicLibrary>();
+            }
+
+            return _instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
+
+
+
+    public void AddSongToLibrary(Song song)
+    {
+        librarySongList.Add(song);
+    }
+
+    public void RemoveSongToLibrary(Song song)
+    {
+        if (librarySongList.Contains(song))
+        {
+            librarySongList.Remove(song);
+        }
+    }
+
 }

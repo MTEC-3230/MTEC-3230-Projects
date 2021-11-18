@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Artist : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string artistName;
+    public int artistAge; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
