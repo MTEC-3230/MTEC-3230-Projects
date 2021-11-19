@@ -24,9 +24,10 @@ public class Song : MonoBehaviour
 
         return this;
 
-    }
+    } 
 
     private float TrackLength { get; set; }
+
 
 }
 
