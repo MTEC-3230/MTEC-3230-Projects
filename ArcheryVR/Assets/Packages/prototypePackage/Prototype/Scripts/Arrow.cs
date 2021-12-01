@@ -50,6 +50,7 @@ public class Arrow : XRGrabInteractable
             {
                 target.AddScore();
                 Stop();
+                
 
                 var emptyObject = new GameObject();
                 emptyObject.transform.parent = target.transform;
