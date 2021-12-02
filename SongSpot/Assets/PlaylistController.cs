@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaylistController : MonoBehaviour
 {
-    public Playlist playlist;
+    public PlayList playlist;
     public PlaylistUI playlistView;
 
 
