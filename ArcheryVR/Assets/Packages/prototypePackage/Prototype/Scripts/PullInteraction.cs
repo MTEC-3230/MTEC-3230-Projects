@@ -26,11 +26,11 @@ public class PullInteraction : XRBaseInteractable
     }
     public void ForceInteract(XRBaseInteractor interactor)
     {
-        OnSelectEnter(interactor);
+        OnSelectEntered(interactor);
     }
-    protected override void OnSelectEnter(XRBaseInteractor interactor)
+    protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
-        base.OnSelectEnter(interactor);
+        base.OnSelectEntered(interactor);
         pullingInteractor = interactor;
 
         //haptic
@@ -38,9 +38,9 @@ public class PullInteraction : XRBaseInteractable
             HapticManager.Impulse(.5f, .05f, controller.inputDevice);
 
     }
-    protected override void OnSelectExit(XRBaseInteractor interactor)
+    protected override void OnSelectExited(XRBaseInteractor interactor)
     {
-        base.OnSelectExit(interactor);
+        base.OnSelectExited(interactor);
         pullingInteractor = null;
         PullAmount = 0f;
 

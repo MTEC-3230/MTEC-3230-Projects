@@ -18,9 +18,9 @@ public class PrefabSpawner : XRSocketInteractor
         CreateAndSelectPrefab();
         SetAttachOffset();
     }
-    protected override void OnSelectExit(XRBaseInteractable interactable)
+    protected override void OnSelectExited(XRBaseInteractable interactable)
     {
-        base.OnSelectExit(interactable);
+        base.OnSelectExited(interactable);
         CreateAndSelectPrefab();
     }
 
@@ -37,7 +37,7 @@ public class PrefabSpawner : XRSocketInteractor
     }
     void SelectPrefab(Arrow interactable)
     {
-        OnSelectEnter(interactable);
+        OnSelectEntered(interactable);
         interactable.OnSelectEnter(this);
     }
 
@@ -51,6 +51,6 @@ public class PrefabSpawner : XRSocketInteractor
 
     public void ForceDeinteract(XRBaseInteractable interactable)
     {
-        OnSelectExit(interactable);
+        OnSelectExited(interactable);
     }
 }

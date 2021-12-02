@@ -36,9 +36,9 @@ public class Bow : XRGrabInteractable
         lineRenderer.SetPosition(1, linePosition);
     }
 
-    protected override void OnSelectEnter(XRBaseInteractor interactor)
+    protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
-        base.OnSelectEnter(interactor);
+        base.OnSelectEntered(interactor);
     }
 
     //public void BowHaptic(XRBaseInteractor interactor)

@@ -19,24 +19,26 @@ public class Notch : XRSocketInteractor
     protected override void OnEnable()
     {
         base.OnEnable();
-        pullInteraction.onSelectExit.AddListener(TryToReleaseArrow);
+        pullInteraction.onSelectExited.AddListener(TryToReleaseArrow);
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
-        pullInteraction.onSelectExit.AddListener(TryToReleaseArrow);
+        pullInteraction.onSelectExited.AddListener(TryToReleaseArrow);
     }
 
-    protected override void OnSelectEnter(XRBaseInteractable interactable)
+    protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
-        base.OnSelectEnter(interactable);
+        base.OnSelectEntered(interactable);
         StoreArrow(interactable);
     }
 
-    protected override void OnHoverEnter(XRBaseInteractable interactable)
+    protected override void OnHoverEntered(XRBaseInteractable interactable)
     {
-        if(interactable is Arrow arrow && arrow.selectingInteractor is HandInteractor hand)
+        base.OnHoverEntered(interactable);
+
+        if (interactable is Arrow arrow && arrow.selectingInteractor is HandInteractor hand)
         {
             arrow.OnSelectExit(hand);
             hand.ForceDeinteract(arrow);
@@ -57,14 +59,20 @@ public class Notch : XRSocketInteractor
     {
         if (currentArrow)
         {
-            ForceDeselect();
+            ForceDeselect(interactor);
             ReleaseArrow();
         }
     }
 
-    private void ForceDeselect()
+    private void ForceDeselect(XRBaseInteractor interactor)
     {
-        base.OnSelectExit(currentArrow);
+        //base.OnSelectExit(currentArrow);
+        SelectExitEventArgs args = new SelectExitEventArgs();
+        args.interactorObject = interactor;
+        args.interactableObject = currentArrow;
+        //args.manager = null;
+        args.isCanceled = false; 
+        base.OnSelectExited(args);
         currentArrow.OnSelectExit(this);
     }
 

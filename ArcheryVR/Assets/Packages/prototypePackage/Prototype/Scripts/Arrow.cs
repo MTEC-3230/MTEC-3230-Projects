@@ -138,12 +138,12 @@ public class Arrow : XRGrabInteractable
 
     public void OnSelectEnter(XRBaseInteractor interactor)
     {
-        base.OnSelectEnter(interactor);
+        base.OnSelectEntered(interactor);
     }
 
     public new void OnSelectExit(XRBaseInteractor interactor)
     {
-        base.OnSelectExit(interactor);
+        base.OnSelectExited(interactor);
     }
 
     public void ArrowHaptic(XRBaseInteractor interactor)

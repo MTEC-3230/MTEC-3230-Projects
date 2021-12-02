@@ -12,12 +12,12 @@ public class HandInteractor : XRDirectInteractor
 
     public void ForceInteract(XRBaseInteractable interactable)
     {
-        OnSelectEnter(interactable);
+        OnSelectEntered(interactable);
     }
 
     public void ForceDeinteract(XRBaseInteractable interactable)
     {
-        OnSelectExit(interactable);
+        OnSelectExited(interactable);
     }
 
     public void HandDetection(XRBaseInteractable interactable)
