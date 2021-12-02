@@ -18,11 +18,19 @@ public class PrefabSpawner : XRSocketInteractor
         CreateAndSelectPrefab();
         SetAttachOffset();
     }
-    protected override void OnSelectExited(XRBaseInteractable interactable)
+
+    protected override void OnSelectExited(SelectExitEventArgs args)
     {
-        base.OnSelectExited(interactable);
+        base.OnSelectExited(args);
         CreateAndSelectPrefab();
     }
+
+
+    //protected override void OnSelectExited(XRBaseInteractable interactable)
+    //{
+    //    base.OnSelectExited(interactable);
+    //    CreateAndSelectPrefab();
+    //}
 
     void CreateAndSelectPrefab()
     {
@@ -37,20 +45,36 @@ public class PrefabSpawner : XRSocketInteractor
     }
     void SelectPrefab(Arrow interactable)
     {
-        OnSelectEntered(interactable);
+
+        SelectEnterEventArgs args = new SelectEnterEventArgs();
+        args.interactableObject = interactable; 
+
+
+        OnSelectEntered(args);
+        //OnSelectEntered(interactable);
         interactable.OnSelectEnter(this);
     }
 
     void SetAttachOffset()
     {
-        if (selectTarget is XRGrabInteractable interactable)
+
+        if (selectTarget.GetOldestInteractorSelecting() is XRGrabInteractable interactable)
         {
             attachOffset = interactable.attachTransform.localPosition;
         }
+
+
+        //if (selectTarget is XRGrabInteractable interactable)
+        //{
+        //    attachOffset = interactable.attachTransform.localPosition;
+        //}
     }
 
     public void ForceDeinteract(XRBaseInteractable interactable)
     {
-        OnSelectExited(interactable);
+        //OnSelectExited(interactable);
+        SelectExitEventArgs args = new SelectExitEventArgs();
+        args.interactableObject = interactable; 
+        OnSelectExited( args);
     }
 }
