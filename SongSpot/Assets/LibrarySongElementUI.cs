@@ -8,7 +8,7 @@ public class LibrarySongElementUI : MonoBehaviour
     public Button addSongToPlaylist;
     public Text label;
 
-    private PlayList playlist; 
+    private Playlist playlist; 
 
     public void Start()
     {

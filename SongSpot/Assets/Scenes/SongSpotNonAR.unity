@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -558,7 +558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -212, y: 172}
+  m_AnchoredPosition: {x: 9.000061, y: 122}
   m_SizeDelta: {x: 791.6, y: 254.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &37399754
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.25584427, b: 0.25584427, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1231,147 +1231,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129194690}
   m_CullTransparentMesh: 1
---- !u!1001 &134878442
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260516, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048961032260517, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_Name
-      value: Canvas Audio w Playlist
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566818603, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566818603, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566818603, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566830923, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566830923, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566864777, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566864777, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566910043, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566946717, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566946717, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 609048962566946717, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b08a45cf135642741b4abec0d022d3d2, type: 3}
 --- !u!1 &135548084
 GameObject:
   m_ObjectHideFlags: 0
@@ -12539,12 +12398,6 @@ GameObject:
   - component: {fileID: 1180817185}
   - component: {fileID: 1180817184}
   - component: {fileID: 1180817183}
-  - component: {fileID: 1180817200}
-  - component: {fileID: 1180817199}
-  - component: {fileID: 1180817198}
-  - component: {fileID: 1180817197}
-  - component: {fileID: 1180817196}
-  - component: {fileID: 1180817195}
   m_Layer: 5
   m_Name: Album2
   m_TagString: Untagged
@@ -12921,92 +12774,6 @@ Canvas:
   m_SortingLayerID: -1915606183
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1180817195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180817181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d469b87b8ddfdf42bc5f7f9df281afd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  librarySongList: []
---- !u!114 &1180817196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180817181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404d3e7c711ab2c4bac39f52c217ea5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playlist: {fileID: 0}
-  playlistView: {fileID: 0}
-  songs: []
---- !u!114 &1180817197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180817181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f4b84bf1c416b4dacf9c088625efc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  library: {fileID: 0}
-  libraryView: {fileID: 0}
-  songs: []
---- !u!114 &1180817198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180817181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26106f2335b522141b590acc442a8557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playListSongs: []
---- !u!114 &1180817199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180817181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62332ff6eaa05174db207785114930cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  albumName: 
-  artistName: 
-  songs: []
---- !u!114 &1180817200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180817181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee13b3bf9880e64fb7d749c3867c698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songName: 
-  artistName: 
-  audioClip: {fileID: 0}
 --- !u!1 &1194028856
 GameObject:
   m_ObjectHideFlags: 0
@@ -17025,7 +16792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13053271, g: 0.9433962, b: 0.23794636, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21348,12 +21115,6 @@ GameObject:
   - component: {fileID: 2085620734}
   - component: {fileID: 2085620733}
   - component: {fileID: 2085620736}
-  - component: {fileID: 2085620742}
-  - component: {fileID: 2085620741}
-  - component: {fileID: 2085620740}
-  - component: {fileID: 2085620739}
-  - component: {fileID: 2085620738}
-  - component: {fileID: 2085620737}
   m_Layer: 5
   m_Name: Album1
   m_TagString: Untagged
@@ -21730,103 +21491,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 613.7112, y: 575.33234, z: 167.64748}
   m_Center: {x: 56.85539, y: -123.82233, z: -146.2268}
---- !u!114 &2085620737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085620723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f4b84bf1c416b4dacf9c088625efc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  library: {fileID: 0}
-  libraryView: {fileID: 0}
-  songs: []
---- !u!114 &2085620738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085620723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26106f2335b522141b590acc442a8557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playListSongs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &2085620739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085620723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d469b87b8ddfdf42bc5f7f9df281afd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  librarySongList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &2085620740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085620723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404d3e7c711ab2c4bac39f52c217ea5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playlist: {fileID: 0}
-  playlistView: {fileID: 0}
-  songs: []
---- !u!114 &2085620741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085620723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee13b3bf9880e64fb7d749c3867c698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songName: 
-  artistName: 
-  audioClip: {fileID: 0}
---- !u!114 &2085620742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085620723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62332ff6eaa05174db207785114930cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  albumName: 
-  artistName: 
-  songs: []
 --- !u!1 &2114945399
 GameObject:
   m_ObjectHideFlags: 0

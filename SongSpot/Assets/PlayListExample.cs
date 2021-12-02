@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayListExample : MonoBehaviour
+public class PlaylistExample : MonoBehaviour
 {
 
-    public PlayList playlist;
+    public Playlist playlist;
     public PlaylistUI playlistView;
 
 
@@ -30,10 +30,10 @@ public class PlayListExample : MonoBehaviour
 
 
         var go = new GameObject();
-        go.AddComponent<PlayList>();
+        go.AddComponent<Playlist>();
         go.name = "Playlist";
 
-        playlist = go.GetComponent<PlayList>();
+        playlist = go.GetComponent<Playlist>();
 
         playlist.playListSongs = songs;
 
