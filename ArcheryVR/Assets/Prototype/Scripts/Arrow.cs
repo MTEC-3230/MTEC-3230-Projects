@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class Arrow : XRGrabInteractable
 {
-    public float speed = 5000f;
+    public float speed = 1000f;
     public Transform tip;
     bool inAir = false;
     Vector3 lastPosition = Vector3.zero;
@@ -37,12 +37,7 @@ public class Arrow : XRGrabInteractable
 
     private void CheckCollision()
     {
-
-        int layermask = LayerMask.GetMask("Bow"); 
-        layermask = ~layermask; 
-
-        //if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo))
-        if(Physics.Linecast(lastPosition,tip.position, out RaycastHit hitInfo, layermask))
+        if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo))
         {
 
 
@@ -55,7 +50,7 @@ public class Arrow : XRGrabInteractable
                 emptyObject.transform.parent = target.transform;
                 this.transform.parent = emptyObject.transform;
 
-                this.GetComponent<XRGrabInteractable>().colliders.Clear();
+
                 return;
             }
 
@@ -88,15 +83,6 @@ public class Arrow : XRGrabInteractable
         ArrowParticles(false);
         ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "target")
-        {
-            Destroy(collision.gameObject);
-            Debug.Log("target hit");
-        }
-    }
-
 
     public void Release(float value)
     {
