@@ -82,28 +82,24 @@ public class Glass : MonoBehaviour
         //Check all recipes in the dictionary
         foreach (KeyValuePair<string, Drink> k in BarManager.Instance.MasterRecipeList)
         {
-            bool hasRecipeContents = true;
+            int componentMatches = 0;
+
             foreach (Drink d in k.Value.components)
             {
-                bool hasComponent = false;
                 foreach (Drink d2 in currentDrinks)
                 {
                     if (d2.getID().Equals(d.getID()))
                     {
-                        hasComponent = true;
+                        componentMatches++;
                     }
                 }
-                if (!hasComponent)
-                {
-                    hasRecipeContents = false;
-                    break;
-                }
             }
-            if (hasRecipeContents)
+            if ((componentMatches == k.Value.components.Count) && (k.Value.components.Count == currentDrinks.Count))
             {
                 return k.Value;
             }
         }
+        currentMixedDrink = null;
         return null;
     }
 

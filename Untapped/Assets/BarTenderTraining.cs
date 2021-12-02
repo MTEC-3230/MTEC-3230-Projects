@@ -87,13 +87,13 @@ public class BarTenderTraining : TrainingManager//: StateMachine
 
 
 
-    [SerializeField] private TextDispay display;
+    [SerializeField] private TextDisplay display;
 
     private TrainingState _currentState;
     private TrainingState _previousState;
 
 
-    public TextDispay textDispay => display;
+    public TextDisplay textDispay => display;
 
 
     // 

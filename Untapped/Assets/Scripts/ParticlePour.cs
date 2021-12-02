@@ -13,11 +13,11 @@ public class ParticlePour : MonoBehaviour
     // Event declaration
     public static event PourDelgate OnPour;
 
-
     bool is_Pouring = false; 
 
     void Awake ()
     {
+        //Transform cap = this.gameObject.transform.GetChild(0);
         particle = GetComponent<ParticleSystem>();
     }
 
@@ -27,15 +27,12 @@ public class ParticlePour : MonoBehaviour
         {
             particle.enableEmission = true;
             if(!is_Pouring) OnPour();
-
-
             is_Pouring = true; 
         }
         else
         {
             particle.enableEmission = false;
             is_Pouring = false;
-
         }
     }
 }

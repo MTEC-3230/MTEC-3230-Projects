@@ -52,6 +52,13 @@ using UnityEngine;
     public void Start()
     {
         MasterRecipeList.Add("Screwdriver", gameObject.AddComponent<Screwdriver>());
+        MasterRecipeList.Add("Redbull Vodka", gameObject.AddComponent<RedBullVodka>());
+        MasterRecipeList.Add("Carribean Punch", gameObject.AddComponent<CarribeanPunch>());
+        MasterRecipeList.Add("Monkey Gland", gameObject.AddComponent<MonkeyGland>());
+        MasterRecipeList.Add("Tequila Sunrise", gameObject.AddComponent<TequilaSunrise>());
+        MasterRecipeList.Add("Blue Hawaiian", gameObject.AddComponent<BlueHawaiian>());
+        MasterRecipeList.Add("Vodka Cranberry", gameObject.AddComponent<VodkaCranberry>());
+
         Pour.OnPour += aPour;
     }
 
@@ -63,6 +70,11 @@ using UnityEngine;
         if (pourFrom == null || pourInto == null)
         {
             Debug.Log("Something went wrong");
+            return;
+        }
+
+        if (pourFrom.currentDrinks.Count <= 0)
+        {
             return;
         }
 

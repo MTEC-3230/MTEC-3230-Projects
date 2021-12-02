@@ -27,7 +27,7 @@ public class TrainingStateStep3 : TrainingState//: IState
 
         Debug.Log("OnStateEnter ... " + _stateName.ToString());
 
-        _manager.textDispay.SetDialogText(step3);
+        _manager.textDisplay.SetDialogText(step3);
         //audioSource = _manager.audioSource;
         //audioSource.Stop();
         //audioSource.clip = audioClip;

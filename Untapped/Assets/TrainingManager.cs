@@ -47,7 +47,7 @@ public class TrainingManager : MonoBehaviour//: StateMachine
     private Dictionary<TutorialSteps, TrainingState> dictionary = new Dictionary<TutorialSteps, TrainingState>();
 
 
-    private int _currentStateIndex;
+    public int _currentStateIndex;
 
 
     public TrainingStateStep1 step1;
@@ -57,13 +57,13 @@ public class TrainingManager : MonoBehaviour//: StateMachine
 
 
 
-    [SerializeField] private TextDispay display;
+    [SerializeField] private TextDisplay display;
 
     private TrainingState _currentState;
     private TrainingState _previousState;
 
 
-    public TextDispay textDispay => display;
+    public TextDisplay textDisplay => display;
 
 
     public void NextState()
@@ -115,9 +115,10 @@ public class TrainingManager : MonoBehaviour//: StateMachine
 
         // Play Intro 
         //StartCoroutine(PlayIntro()); 
+        SetupTraining();
 
     }
-
+    
     // Update is called once per frame
     public void Update()
     {

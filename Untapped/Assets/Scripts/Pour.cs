@@ -8,7 +8,14 @@ public class Pour : MonoBehaviour
     private Glass m;
     public delegate void OnPourDelegate(GameObject a, GameObject b);
     public static OnPourDelegate OnPour;
+    private ParticleSystem pourParticles;
 
+    void Start()
+    { 
+        Transform cap = this.gameObject.transform.GetChild(0);
+        pourParticles = cap.GetComponent<ParticleSystem>();
+    }
+    
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -17,7 +24,7 @@ public class Pour : MonoBehaviour
         if (Vector3.Dot(transform.up, Vector3.down) > 0.8)
         {
             //when pouring
-            //todo- implement some sort of timer for pouring + particle system
+            pourParticles.enableEmission = true;
 
             Transform cap = this.gameObject.transform.GetChild(0);
             if (cap.name != "Cap")
@@ -35,6 +42,10 @@ public class Pour : MonoBehaviour
             }
 
 
+        }
+        else
+        {
+            pourParticles.enableEmission = false;
         }
 
     }

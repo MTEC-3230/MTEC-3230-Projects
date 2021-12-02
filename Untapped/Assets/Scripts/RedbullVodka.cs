@@ -10,6 +10,7 @@ public class RedBullVodka : Drink
     private static Color COLOR = new Color(1f, 0.3f, 0.4f, 0.8f);
     void Start()
     {
+        components = new List<Drink> {gameObject.AddComponent<RedBull>(), gameObject.AddComponent<Vodka>()};
         this.setID(NAME);
         this.setColor(COLOR);
     }
