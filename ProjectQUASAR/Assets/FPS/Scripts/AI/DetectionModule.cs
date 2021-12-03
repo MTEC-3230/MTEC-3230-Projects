@@ -25,22 +25,8 @@ namespace Unity.FPS.AI
         public UnityAction onDetectedTarget;
         public UnityAction onLostTarget;
 
-        //[SerializeField]
-        private GameObject m_KnownDetectedTarget;
-
-        public GameObject KnownDetectedTarget
-        {
-            get
-            { return m_KnownDetectedTarget; }
-            set
-            {
-                m_KnownDetectedTarget = value;
-            }
-        }
-
-
+        public GameObject KnownDetectedTarget { get; private set; }
         public bool IsTargetInAttackRange { get; private set; }
-
         public bool IsSeeingTarget { get; private set; }
         public bool HadKnownTarget { get; private set; }
 
@@ -60,11 +46,10 @@ namespace Unity.FPS.AI
         public virtual void HandleTargetDetection(Actor actor, Collider[] selfColliders)
         {
             // Handle known target detection timeout
-            /// FIXME
-            //if (KnownDetectedTarget && !IsSeeingTarget && (Time.time - TimeLastSeenTarget) > KnownTargetTimeout)
-            //{
-            //    KnownDetectedTarget = null;
-            //}
+            if (KnownDetectedTarget && !IsSeeingTarget && (Time.time - TimeLastSeenTarget) > KnownTargetTimeout)
+            {
+                KnownDetectedTarget = null;
+            }
 
             // Find the closest visible hostile actor
             float sqrDetectionRange = DetectionRange * DetectionRange;
@@ -81,16 +66,6 @@ namespace Unity.FPS.AI
                         RaycastHit[] hits = Physics.RaycastAll(DetectionSourcePoint.position,
                             (otherActor.AimPoint.position - DetectionSourcePoint.position).normalized, DetectionRange,
                             -1, QueryTriggerInteraction.Ignore);
-
-
-                        // Testing
-                        //int layer = 9;
-                        //int layerMask = 1 << layer;
-                        //layerMask = ~layerMask;
-                        //layer = -1; 
-                        //RaycastHit[] hits = Physics.RaycastAll(DetectionSourcePoint.position, (otherActor.AimPoint.position - DetectionSourcePoint.position).normalized, DetectionRange, layerMask, QueryTriggerInteraction.Ignore);
-
-
                         RaycastHit closestValidHit = new RaycastHit();
                         closestValidHit.distance = Mathf.Infinity;
                         bool foundValidHit = false;
@@ -105,15 +80,7 @@ namespace Unity.FPS.AI
 
                         if (foundValidHit)
                         {
-
-                            Debug.Log("Found Valid Hit!" + closestValidHit.collider.gameObject.transform.parent.name);
-
                             Actor hitActor = closestValidHit.collider.GetComponentInParent<Actor>();
-                            if(hitActor == null)
-                                hitActor = closestValidHit.collider.GetComponentInChildren<Actor>();
-
-                            if (hitActor == null) Debug.Log("No Actor component on hitActor!");
-
                             if (hitActor == otherActor)
                             {
                                 IsSeeingTarget = true;
@@ -121,9 +88,6 @@ namespace Unity.FPS.AI
 
                                 TimeLastSeenTarget = Time.time;
                                 KnownDetectedTarget = otherActor.AimPoint.gameObject;
-                                if (hitActor != null) Debug.Log("Found Valid Hit!" + hitActor.gameObject.name + " hit target : " + KnownDetectedTarget.gameObject.name);
-
-
                             }
                         }
                     }
@@ -134,25 +98,16 @@ namespace Unity.FPS.AI
                                     Vector3.Distance(transform.position, KnownDetectedTarget.transform.position) <=
                                     AttackRange;
 
-            // KnownDetectedTarget is null for VRPlayer
-            //Debug.Log("IsTargetInAttackRange : " + KnownDetectedTarget + " hit target : " + KnownDetectedTarget.gameObject.name);
-
-            if(KnownDetectedTarget != null) 
-                Debug.Log("Found Valid Hit!  " + "KnownDetectedTarget: " + KnownDetectedTarget.gameObject.name + " IsSeeingTarget: " + IsSeeingTarget + " IsTargetInAttackRange: " + IsTargetInAttackRange);
-
             // Detection events
             if (!HadKnownTarget &&
                 KnownDetectedTarget != null)
             {
-                Debug.Log("OnDetect");
                 OnDetect();
             }
 
             if (HadKnownTarget &&
                 KnownDetectedTarget == null)
             {
-                Debug.Log("OnLostTarget");
-
                 OnLostTarget();
             }
 

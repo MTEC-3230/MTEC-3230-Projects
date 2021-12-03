@@ -350,8 +350,6 @@ namespace Unity.FPS.Game
             m_LastTimeShot = Time.time;
         }
 
-        
-
         public bool HandleShootInputs(bool inputDown, bool inputHeld, bool inputUp)
         {
             m_WantsToShoot = inputDown || inputHeld;
@@ -392,23 +390,7 @@ namespace Unity.FPS.Game
             }
         }
 
-        public void Shoot()
-        {
-
-            Debug.Log("Shoot!  Current Ammo " + m_CurrentAmmo); 
-            if (m_CurrentAmmo >= 1f
-                && m_LastTimeShot + DelayBetweenShots < Time.time)
-            {
-                HandleShoot();
-                m_CurrentAmmo -= 1f;
-
-
-            }
-
-        }
-
-
-        public bool TryShoot()
+        bool TryShoot()
         {
             if (m_CurrentAmmo >= 1f
                 && m_LastTimeShot + DelayBetweenShots < Time.time)

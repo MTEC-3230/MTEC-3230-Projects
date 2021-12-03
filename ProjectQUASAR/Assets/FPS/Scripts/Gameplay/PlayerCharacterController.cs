@@ -99,10 +99,10 @@ namespace Unity.FPS.Gameplay
         public UnityAction<bool> OnStanceChanged;
 
         public Vector3 CharacterVelocity { get; set; }
-        public virtual bool IsGrounded { get; protected set; }
-        public virtual bool HasJumpedThisFrame { get; protected set; }
-        public virtual bool IsDead { get; protected set; }
-        public virtual bool IsCrouching { get; protected set; }
+        public bool IsGrounded { get; private set; }
+        public bool HasJumpedThisFrame { get; private set; }
+        public bool IsDead { get; private set; }
+        public bool IsCrouching { get; private set; }
 
         public float RotationMultiplier
         {
@@ -117,21 +117,21 @@ namespace Unity.FPS.Gameplay
             }
         }
 
-        protected Health m_Health;
-        protected PlayerInputHandler m_InputHandler;
-        protected CharacterController m_Controller;
-        protected PlayerWeaponsManager m_WeaponsManager;
-        protected Actor m_Actor;
-        protected Vector3 m_GroundNormal;
-        protected Vector3 m_CharacterVelocity;
-        protected Vector3 m_LatestImpactSpeed;
-        protected float m_LastTimeJumped = 0f;
-        protected float m_CameraVerticalAngle = 0f;
-        protected float m_FootstepDistanceCounter;
-        protected float m_TargetCharacterHeight;
+        Health m_Health;
+        PlayerInputHandler m_InputHandler;
+        CharacterController m_Controller;
+        PlayerWeaponsManager m_WeaponsManager;
+        Actor m_Actor;
+        Vector3 m_GroundNormal;
+        Vector3 m_CharacterVelocity;
+        Vector3 m_LatestImpactSpeed;
+        float m_LastTimeJumped = 0f;
+        float m_CameraVerticalAngle = 0f;
+        float m_FootstepDistanceCounter;
+        float m_TargetCharacterHeight;
 
-        protected const float k_JumpGroundingPreventionTime = 0.2f;
-        protected const float k_GroundCheckDistanceInAir = 0.07f;
+        const float k_JumpGroundingPreventionTime = 0.2f;
+        const float k_GroundCheckDistanceInAir = 0.07f;
 
         void Awake()
         {
@@ -264,7 +264,7 @@ namespace Unity.FPS.Gameplay
             }
         }
 
-        protected virtual void HandleCharacterMovement()
+        void HandleCharacterMovement()
         {
             // horizontal character rotation
             {
@@ -435,7 +435,7 @@ namespace Unity.FPS.Gameplay
         }
 
         // returns false if there was an obstruction
-        protected virtual bool SetCrouchingState(bool crouched, bool ignoreObstructions)
+        bool SetCrouchingState(bool crouched, bool ignoreObstructions)
         {
             // set appropriate heights
             if (crouched)

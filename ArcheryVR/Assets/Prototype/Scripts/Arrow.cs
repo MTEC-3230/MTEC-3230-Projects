@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class Arrow : XRGrabInteractable
 {
-    public float speed = 5000f;
+    public float speed = 1000f;
     public Transform tip;
     bool inAir = false;
     Vector3 lastPosition = Vector3.zero;
@@ -72,26 +72,17 @@ public class Arrow : XRGrabInteractable
                 transform.parent = hitInfo.transform;
                 body.AddForce(rb.velocity, ForceMode.Impulse);
             }
-            //Stop();
+            Stop();
         }
     }
-    //private void Stop()
-    //{
-    //    inAir = false;
-    //    SetPhysics(false);
-
-    //    ArrowParticles(false);
-    //    ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
-    //}
-    private void OnCollisionEnter(Collision collision)
+    private void Stop()
     {
-        if (collision.gameObject.tag == "target")
-        {
-            Destroy(collision.gameObject);
-            Debug.Log("target hit");
-        }
-    }
+        inAir = false;
+        SetPhysics(false);
 
+        ArrowParticles(false);
+        ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
+    }
 
     public void Release(float value)
     {
