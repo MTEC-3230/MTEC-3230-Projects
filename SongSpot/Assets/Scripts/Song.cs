@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Song : MonoBehaviour
 {
-<<<<<<< Updated upstream
-   
-=======
->>>>>>> Stashed changes
 
     public string songName;
     //public int songID;
@@ -27,7 +23,7 @@ public class Song : MonoBehaviour
 
         return this;
 
-<<<<<<< Updated upstream
+ 
     } 
 
     private float TrackLength { get; set; }
@@ -35,10 +31,4 @@ public class Song : MonoBehaviour
 
 }
 
-=======
-    }
-
-    private float TrackLength { get; set; }
-
-}
->>>>>>> Stashed changes
+   
