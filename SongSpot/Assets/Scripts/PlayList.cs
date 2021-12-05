@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class PlayList : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    // Start is called before the first frame update
-   
-=======
->>>>>>> Stashed changes
+
 
     public List<Song> playListSongs;
 
@@ -16,7 +12,4 @@ public class PlayList : MonoBehaviour
 
 
 }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes

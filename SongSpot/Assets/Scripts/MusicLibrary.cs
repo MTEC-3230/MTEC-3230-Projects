@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicLibrary : MonoBehaviour
 {
-<<<<<<< Updated upstream
+
    
     
     public MusicLibrary()
@@ -30,7 +30,7 @@ public class MusicLibrary : MonoBehaviour
     {
         
     }
-=======
+
 
     public List<Song> librarySongList;
 
@@ -73,5 +73,5 @@ public class MusicLibrary : MonoBehaviour
         }
     }
 
->>>>>>> Stashed changes
+
 }
