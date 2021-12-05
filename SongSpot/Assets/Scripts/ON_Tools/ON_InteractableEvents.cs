@@ -1,10 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ON{
-	public class ON_InteractableEvents : MonoBehaviour {
-		
+namespace ON
+{
+	public class ON_InteractableEvents : MonoBehaviour
+	{
+
 		public delegate void EnterAction();
 		public event EnterAction OnEnter;
 
@@ -46,107 +48,132 @@ namespace ON{
 		public bool neverBlockEnter;
 		public bool dontRetriggerUntilExit;
 
-		int exitCounter =0;
+		int exitCounter = 0;
 
-		public void Ping(){
+		public void Ping()
+		{
 			pinged = true;
 			idling = false;
 		}
-			
-		void Update () {
-			if (pinged && !prevPinged) {
-				CheckBlocked ();
-				if (!blocked || neverBlockEnter) {
-					HandleEnter ();
+
+		void Update()
+		{
+			if (pinged && !prevPinged)
+			{
+				CheckBlocked();
+				if (!blocked || neverBlockEnter)
+				{
+					HandleEnter();
 
 				}
-			} else if (pinged && prevPinged) {
-				CheckBlocked ();
-				if(!blocked)
-					HandleHover ();
-			} else if (!pinged && prevPinged) {
-				CheckBlocked ();
-				if (!blocked || neverBlockExit) {
-					HandleExit ();
+			}
+			else if (pinged && prevPinged)
+			{
+				CheckBlocked();
+				if (!blocked)
+					HandleHover();
+			}
+			else if (!pinged && prevPinged)
+			{
+				CheckBlocked();
+				if (!blocked || neverBlockExit)
+				{
+					HandleExit();
 					exitCounter--;
 				}
-			} else if (!pinged && !prevPinged && !idling) {
-				CheckBlocked ();
-				if(!blocked)
-					HandleReset ();
+			}
+			else if (!pinged && !prevPinged && !idling)
+			{
+				CheckBlocked();
+				if (!blocked)
+					HandleReset();
 			}
 			prevPinged = pinged;
 			pinged = false;
 		}
 
-		public void CheckBlocked(){
+		public void CheckBlocked()
+		{
 			if (blockCounter > 0)
 				blocked = true;
 			else
 				blocked = false;
-			if(debug)
-				Debug.Log ("blockCounter: " + blockCounter);
+			if (debug)
+				Debug.Log("blockCounter: " + blockCounter);
 		}
 
-		public void HandleEnter(){
-			if(OnEnter!=null)
-				OnEnter ();
+		public void HandleEnter()
+		{
+			if (OnEnter != null)
+				OnEnter();
 			if (debug)
-				Debug.Log ("Enter:" + this.gameObject.name);
+				Debug.Log("Enter:" + this.gameObject.name);
 		}
 
-		public void HandleHover(){
+		public void HandleHover()
+		{
 			if (debug)
-				Debug.Log ("Hover:" + this.gameObject.name);
-			if (counter < timeToTrigger) {
-				if(OnHover!=null)
-					OnHover (counter / timeToTrigger);
+				Debug.Log("Hover:" + this.gameObject.name);
+			if (counter < timeToTrigger)
+			{
+				if (OnHover != null)
+					OnHover(counter / timeToTrigger);
 				counter += Time.deltaTime;
-			} else {
-				if (OnTrigger != null) {
+			}
+			else
+			{
+				if (OnTrigger != null)
+				{
 					triggerCounter++;
-					if (maxTriggers == 0 || triggerCounter <= maxTriggers) {
+					if (maxTriggers == 0 || triggerCounter <= maxTriggers)
+					{
 
-                        //if (dontRetriggerUntilExit && exitCounter == 0)
-                        //	OnTrigger ();
-                        //else if(!dontRetriggerUntilExit)
-                        //	OnTrigger ();
-
-
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            OnTrigger();
-                            if (exitCounter < 1)
-                                exitCounter++;
-                        }
+						//if (dontRetriggerUntilExit && exitCounter == 0)
+						//	OnTrigger ();
+						//else if(!dontRetriggerUntilExit)
+						//	OnTrigger ();
 
 
+						if (Input.GetMouseButtonDown(0))
+						{
+							OnTrigger();
+							if (exitCounter < 1)
+								exitCounter++;
+						}
 
-                    
-                    }
+
+
+
+					}
 				}
 			}
 		}
 
-		public void HandleExit(){
-			if(OnExit!=null)
-				OnExit ();
+		public void HandleExit()
+		{
+			if (OnExit != null)
+				OnExit();
 			if (debug)
-				Debug.Log ("Exit:" + this.gameObject.name);
+				Debug.Log("Exit:" + this.gameObject.name);
 		}
 
-		public void HandleReset(){
+		public void HandleReset()
+		{
 			if (debug)
-				Debug.Log ("Reset:" + this.gameObject.name);
-			if (counter > 0) {
+				Debug.Log("Reset:" + this.gameObject.name);
+			if (counter > 0)
+			{
 				counter -= Time.deltaTime * returnMultiplier;
 				counter = counter < 0 ? 0 : counter;
 				if (OnHover != null)
-					OnHover (counter / timeToTrigger);
-				
-			} else {
-				if (OnIdle != null) {
-					OnIdle ();
+					OnHover(counter / timeToTrigger);
+
+			}
+			else
+			{
+				if (OnIdle != null)
+				{
+					OnIdle();
 				}
 				idling = true;
 			}
