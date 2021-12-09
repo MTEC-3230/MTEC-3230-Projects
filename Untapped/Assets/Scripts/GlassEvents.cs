@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pour : MonoBehaviour
+public class GlassEvents : MonoBehaviour
 {
     
     private Glass m;
     public delegate void OnPourDelegate(GameObject a, GameObject b);
     public static OnPourDelegate OnPour;
+
+    public delegate void OnPickupDelegate(GameObject a);
+    public static OnPickupDelegate OnPickup;
+
     private ParticleSystem pourParticles;
+    private bool isPouring = false;
 
     void Start()
-    { 
+    {
+        m = GetComponent<Glass>();
         Transform cap = this.gameObject.transform.GetChild(0);
         pourParticles = cap.GetComponent<ParticleSystem>();
     }
@@ -24,7 +30,10 @@ public class Pour : MonoBehaviour
         if (Vector3.Dot(transform.up, Vector3.down) > 0.8)
         {
             //when pouring
-            pourParticles.enableEmission = true;
+            if (m.currentDrinks.Count != 0)
+            {
+                pourParticles.enableEmission = true;
+            }
 
             Transform cap = this.gameObject.transform.GetChild(0);
             if (cap.name != "Cap")
@@ -36,7 +45,11 @@ public class Pour : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag.Equals("Bottle") && !hit.transform.gameObject.Equals(this.gameObject))
                 {
-                    OnPour(this.gameObject, hit.transform.gameObject);
+                    if (!isPouring)
+                    {
+                        OnPour(this.gameObject, hit.transform.gameObject);
+                        isPouring = true;
+                    }
                 }
                 
             }
@@ -45,6 +58,7 @@ public class Pour : MonoBehaviour
         }
         else
         {
+            isPouring = false;
             pourParticles.enableEmission = false;
         }
 

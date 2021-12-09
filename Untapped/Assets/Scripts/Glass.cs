@@ -46,7 +46,17 @@ public class Glass : MonoBehaviour
             }
         }
         MixColor();
+        if (thisRenderer.materials.Length == 1){
         thisRenderer.material.color = color1;
+        }
+        else
+        {
+            foreach (Material m in thisRenderer.materials)
+            {
+                m.color = color1;
+            }
+        }
+
     }
 
     public void AddDrink(Drink d)

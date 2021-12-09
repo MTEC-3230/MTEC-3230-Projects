@@ -52,6 +52,8 @@ public class XROffsetGrabbable : XRGrabInteractable
         }
 
         base.OnSelectEntered(args);
+        GlassEvents.OnPickup(args.interactable.gameObject);
+
     }
 
     //protected override void OnSelectEnter(XRBaseInteractor interactor)
@@ -84,6 +86,7 @@ public class XROffsetGrabbable : XRGrabInteractable
             {
                 interactor.attachTransform.localPosition = savedTransform.OriginalPosition;
                 interactor.attachTransform.localRotation = savedTransform.OriginalRotation;
+                //delete if things go horribly wrong
 
                 m_SavedTransforms.Remove(interactor);
             }

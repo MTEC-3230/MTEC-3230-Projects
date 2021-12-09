@@ -7,8 +7,8 @@ public class TrainingStateStep1 : TrainingState//: IState
 
 
     public TrainingState nextState; // Use this to assign the next state when this state is completed successfully. 
-
-
+    public GameObject selectedGlass = null;
+    
     [Multiline]
     public string step1 = "Step 1:\n";
 
@@ -18,7 +18,7 @@ public class TrainingStateStep1 : TrainingState//: IState
 
     private void Start()
     {
-        ParticlePour.OnPour += CompleteStep;
+        GlassEvents.OnPickup += CheckPickup;
     }
 
 
@@ -26,6 +26,38 @@ public class TrainingStateStep1 : TrainingState//: IState
     {
         completedSuccesfully = true; 
     }
+
+    public void CheckPickup(GameObject a)
+    {
+        if (_manager._currentStateIndex == this.index)
+        {
+            Glass thisGlass = a.GetComponent<Glass>();
+            if (thisGlass == null)
+            {
+                Debug.Log("What the FUCK");
+                return;
+            }
+            if (a.name == "WhiskeyGlass" && thisGlass.currentDrinks.Count == 0)
+            {
+                selectedGlass = a;
+                completedSuccesfully = true;
+            }
+            else
+            {
+                if (thisGlass.currentDrinks.Count > 0)
+                {
+                    step1 = "Pick a glass that is empty.";
+                    _manager.textDisplay.SetDialogText(step1);
+                }
+                else
+                {
+                    step1 = "Wrong glass! Pick up the Whiskey Glass";
+                    _manager.textDisplay.SetDialogText(step1);
+                }
+            }
+        }
+    }
+    
     public TrainingStateStep1(TrainingManager manager)
     {
         _stateName = "Tutorial Step 1";
@@ -87,6 +119,7 @@ public class TrainingStateStep1 : TrainingState//: IState
 
     public override IEnumerator OnStateExit()
     {
+        _manager.SelectedGlass = selectedGlass;
         Debug.Log("OnStateExit : " + _stateName);
         yield return StartCoroutine(base.OnStateExit());
 

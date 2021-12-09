@@ -54,7 +54,7 @@ public class TrainingManager : MonoBehaviour//: StateMachine
     public TrainingStateStep2 step2;
     public TrainingStateStep3 step3;
     public TrainingStateStep4 step4;
-
+    public GameObject SelectedGlass;
 
 
     [SerializeField] private TextDisplay display;

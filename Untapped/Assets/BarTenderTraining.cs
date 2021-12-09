@@ -49,7 +49,6 @@ public class BarTenderTraining : TrainingManager//: StateMachine
     public PlayableDirector director;
 
 
-
     void OnEnable()
     {
         director.played += OnPlayableDirectorPlayed;

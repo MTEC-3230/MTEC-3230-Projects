@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,11 @@ public class TrainingStateStep2 : TrainingState//: IState
     public TrainingStateStep2(TrainingManager manager)
     {
         _stateName = "Tutorial Step 2";
+    }
+
+    private void Start()
+    {
+        GlassEvents.OnPour += Pour;
     }
 
 
@@ -48,7 +54,32 @@ public class TrainingStateStep2 : TrainingState//: IState
     }
 
 
+    public void Pour(GameObject a, GameObject b)
+    {
+        if (_manager._currentStateIndex == this.index)
+        {
 
+            if (a.name == "Vodka Bottle" && _manager.SelectedGlass.Equals(b))
+            {
+                completedSuccesfully = true;
+            }
+            else
+            {
+                if (a.name != "Vodka Bottle")
+                {
+                    completedSuccesfully = false;
+                    _manager.SetState(_manager.step1);
+                    _manager.step1.step1 = "YOU FUCKED UP1. PICK A NEW GLASS";
+                    _manager.textDisplay.SetDialogText(_manager.step1.step1);
+                }
+                else if (!_manager.SelectedGlass.Equals(b))
+                {
+                    step2 = "Pour into the selected whiskey glass.";
+                    _manager.textDisplay.SetDialogText(step2);
+                }
+            }
+        }
+    }
 
 
 

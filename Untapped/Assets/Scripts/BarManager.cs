@@ -59,7 +59,8 @@ using UnityEngine;
         MasterRecipeList.Add("Blue Hawaiian", gameObject.AddComponent<BlueHawaiian>());
         MasterRecipeList.Add("Vodka Cranberry", gameObject.AddComponent<VodkaCranberry>());
 
-        Pour.OnPour += aPour;
+        GlassEvents.OnPour += aPour;
+
     }
 
     public void aPour(GameObject a, GameObject b)
