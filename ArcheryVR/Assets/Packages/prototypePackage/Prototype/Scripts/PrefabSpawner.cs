@@ -47,34 +47,39 @@ public class PrefabSpawner : XRSocketInteractor
     {
 
         SelectEnterEventArgs args = new SelectEnterEventArgs();
-        args.interactableObject = interactable; 
+        args.interactable = interactable; 
+        //args.interactableObject = interactable;  // for XRI 2.0
 
 
         OnSelectEntered(args);
         //OnSelectEntered(interactable);
-        interactable.OnSelectEnter(this);
+
+      
+        //interactable.OnSelectEntered(args);
+        interactable.SelectEntered(interactable);
     }
 
     void SetAttachOffset()
     {
 
-        if (selectTarget.GetOldestInteractorSelecting() is XRGrabInteractable interactable)
-        {
-            attachOffset = interactable.attachTransform.localPosition;
-        }
-
-
-        //if (selectTarget is XRGrabInteractable interactable)
+        //if (selectTarget.GetOldestInteractorSelecting() is XRGrabInteractable interactable)
         //{
         //    attachOffset = interactable.attachTransform.localPosition;
         //}
+
+
+        if (selectTarget is XRGrabInteractable interactable)
+        {
+            attachOffset = interactable.attachTransform.localPosition;
+        }
     }
 
     public void ForceDeinteract(XRBaseInteractable interactable)
     {
         //OnSelectExited(interactable);
         SelectExitEventArgs args = new SelectExitEventArgs();
-        args.interactableObject = interactable; 
+        //args.interactableObject = interactable;  for XRI 2.0
+        args.interactable = interactable;
         OnSelectExited( args);
     }
 }

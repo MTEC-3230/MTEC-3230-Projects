@@ -36,10 +36,19 @@ public class Bow : XRGrabInteractable
         lineRenderer.SetPosition(1, linePosition);
     }
 
-    protected override void OnSelectEntered(XRBaseInteractor interactor)
+
+
+    //protected override void OnSelectEntered(XRBaseInteractor interactor)
+    //{
+    //    base.OnSelectEntered(interactor);
+    //}
+
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        base.OnSelectEntered(interactor);
+        base.OnSelectEntered(args);
     }
+
+
 
     //public void BowHaptic(XRBaseInteractor interactor)
     //{
@@ -51,7 +60,9 @@ public class Bow : XRGrabInteractable
     {
         if (interactor.TryGetComponent(out XRController controller))
         {
-            bool right = (controller.inputDevice.role == UnityEngine.XR.InputDeviceRole.RightHanded);
+            //bool right = (controller.inputDevice.role == UnityEngine.XR.InputDeviceRole.RightHanded);
+            bool right = (controller.inputDevice.characteristics == UnityEngine.XR.InputDeviceCharacteristics.Right);
+
             quiver.localPosition = new Vector3(quiverOffset.x * (right ? -1 : 1), quiverOffset.y, quiver.localPosition.z);
         }
     }

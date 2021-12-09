@@ -136,14 +136,38 @@ public class Arrow : XRGrabInteractable
         }
     }
 
-    public void OnSelectEnter(XRBaseInteractor interactor)
+    //public void OnSelectEnter(XRBaseInteractor interactor)
+    //{
+    //    base.OnSelectEntered(interactor);
+    //}
+
+    //public new void OnSelectExit(XRBaseInteractor interactor)
+    //{
+    //    base.OnSelectExited(interactor);
+    //}
+    public void SelectEntered(XRBaseInteractable interactable)
     {
-        base.OnSelectEntered(interactor);
+        SelectEnterEventArgs args = new SelectEnterEventArgs();
+        //args.interactor = interactor;
+        args.interactable = interactable;
+        OnSelectEntered(args);
+    }
+    public void SelectExit(XRBaseInteractor interactor)
+    {
+        SelectExitEventArgs args = new SelectExitEventArgs();
+        args.interactor = interactor;
+        args.interactable = this; 
+        OnSelectExiting(args);
     }
 
-    public new void OnSelectExit(XRBaseInteractor interactor)
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        base.OnSelectExited(interactor);
+        base.OnSelectEntered(args);
+    }
+
+    protected override void OnSelectExiting(SelectExitEventArgs args)
+    {
+        base.OnSelectExiting(args);
     }
 
     public void ArrowHaptic(XRBaseInteractor interactor)

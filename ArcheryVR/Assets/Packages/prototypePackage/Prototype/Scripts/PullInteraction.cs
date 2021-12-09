@@ -26,28 +26,63 @@ public class PullInteraction : XRBaseInteractable
     }
     public void ForceInteract(XRBaseInteractor interactor)
     {
-        OnSelectEntered(interactor);
+        //OnSelectEntered(interactor);
+        SelectEnterEventArgs args = new SelectEnterEventArgs();
+        args.interactor = interactor;
+        args.interactable = this; 
+
+        OnSelectEntered(args);
+
     }
-    protected override void OnSelectEntered(XRBaseInteractor interactor)
+    //protected override void OnSelectEntered(XRBaseInteractor interactor)
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        base.OnSelectEntered(interactor);
-        pullingInteractor = interactor;
+        //base.OnSelectEntered(interactor);
+        base.OnSelectEntered(args);
+
+
+        //pullingInteractor = interactor;
+        pullingInteractor = args.interactor;
+
 
         //haptic
-        if(pullingInteractor.TryGetComponent(out XRController controller))
+        if (pullingInteractor.TryGetComponent(out XRController controller))
             HapticManager.Impulse(.5f, .05f, controller.inputDevice);
 
     }
-    protected override void OnSelectExited(XRBaseInteractor interactor)
-    {
-        base.OnSelectExited(interactor);
-        pullingInteractor = null;
-        PullAmount = 0f;
+    //protected override void OnSelectExited(XRBaseInteractor interactor)
+    //{
+    //    base.OnSelectExited(interactor);
+    //    pullingInteractor = null;
+    //    PullAmount = 0f;
 
-        //polish
-        stringLine.material.SetColor("_EmissionColor", stringNormalCol);
-        lineParticle.Play();
+    //    //polish
+    //    stringLine.material.SetColor("_EmissionColor", stringNormalCol);
+    //    lineParticle.Play();
+    //}
+
+    public void SelectExited(SelectExitEventArgs args)
+    {
+        OnSelectExited(args); 
     }
+
+    protected override void OnSelectExited(SelectExitEventArgs args)
+    {
+        if(!args.isCanceled)
+        {
+            pullingInteractor = null;
+            PullAmount = 0f;
+
+            //polish
+            stringLine.material.SetColor("_EmissionColor", stringNormalCol);
+            lineParticle.Play();
+        }
+        //base.OnSelectExited(args.interactor);
+
+    }
+
+
+
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
     {
         base.ProcessInteractable(updatePhase);
@@ -86,8 +121,11 @@ public class PullInteraction : XRBaseInteractable
             if (showHandsOnPull && bow.selectingInteractor.TryGetComponent(out XRController controller))
             {
                 //print(controller.inputDevice.role == UnityEngine.XR.InputDeviceRole.RightHanded);
-                leftHand.SetActive(controller.inputDevice.role == UnityEngine.XR.InputDeviceRole.RightHanded);
-                rightHand.SetActive(controller.inputDevice.role == UnityEngine.XR.InputDeviceRole.LeftHanded);
+                //leftHand.SetActive(controller.inputDevice.role == UnityEngine.XR.InputDeviceRole.RightHanded);
+                //rightHand.SetActive(controller.inputDevice.role == UnityEngine.XR.InputDeviceRole.LeftHanded);
+
+                leftHand.SetActive(controller.inputDevice.characteristics == UnityEngine.XR.InputDeviceCharacteristics.Right);
+                rightHand.SetActive(controller.inputDevice.characteristics == UnityEngine.XR.InputDeviceCharacteristics.Left);
             }
         }
         else
