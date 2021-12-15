@@ -10059,7 +10059,7 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
-  speed: 50
+  speed: 100
   tip: {fileID: 7829741186962108687}
   sphereCollider: {fileID: 554311838281975191}
   trailParticle: {fileID: 7770594767211711658}
