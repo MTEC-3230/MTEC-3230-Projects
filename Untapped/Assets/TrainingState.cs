@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public abstract class TrainingState : MonoBehaviour//: IState
 {
@@ -20,6 +21,8 @@ public abstract class TrainingState : MonoBehaviour//: IState
 
         return this; 
     }
+    
+    
 
 
     public virtual IEnumerator OnStateEnter() // Start()
@@ -31,16 +34,12 @@ public abstract class TrainingState : MonoBehaviour//: IState
 
     }
 
-
-
-
-
-
+    
     public virtual IEnumerator OnStateUpdate()
     {
         Debug.Log("TrainingState Base : OnStateUpdate : " + _stateName);
         yield return StartCoroutine(OnStateExit());
-
+        
     }
 
     public virtual IEnumerator OnStateExit()

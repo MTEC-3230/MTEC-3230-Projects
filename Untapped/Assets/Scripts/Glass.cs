@@ -44,8 +44,8 @@ public class Glass : MonoBehaviour
             {
                 addRecipe(newDrink);
             }
+            MixColor();
         }
-        MixColor();
         if (thisRenderer.materials.Length == 1){
         thisRenderer.material.color = color1;
         }
@@ -77,13 +77,8 @@ public class Glass : MonoBehaviour
         }
         else
         {
-            Color newColor = new Color(0, 0, 0, 0);
-            foreach (Drink d in this.currentDrinks)
-            {
-                newColor += d.getColor();
-            }
-
-            this.color1 = newColor;
+            Color badColor = new Color(0f, 0f, 0f, 1f);
+            this.color1 = badColor;
         }
     }
 

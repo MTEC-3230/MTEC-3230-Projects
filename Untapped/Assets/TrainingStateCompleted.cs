@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrainingStateStep4 : TrainingState//: IState
+public class TrainingStateCompleted : TrainingState//: IState
 {
 
 
@@ -10,15 +10,15 @@ public class TrainingStateStep4 : TrainingState//: IState
 
 
     [Multiline]
-    public string step1 = "Step 4:\n";
+    public string step4 = "Yay!";
 
     //public AudioClip audioClip;
     //private AudioSource audioSource;
 
 
-    public TrainingStateStep4(TrainingManager manager)
+    public TrainingStateCompleted(TrainingManager manager)
     {
-        _stateName = "Tutorial Step 4";
+        _stateName = "Tutorial Completed";
     }
 
 
@@ -27,7 +27,7 @@ public class TrainingStateStep4 : TrainingState//: IState
 
         Debug.Log("OnStateEnter ... " + _stateName.ToString());
 
-        _manager.textDisplay.SetDialogText(step1);
+        _manager.textDisplay.SetDialogText(step4);
         //audioSource = _manager.audioSource;
         //audioSource.Stop();
         //audioSource.clip = audioClip;
@@ -37,7 +37,7 @@ public class TrainingStateStep4 : TrainingState//: IState
         //yield return new WaitForSeconds(audioSource.clip.length);
 
 
-        completedSuccesfully = true;
+       // completedSuccesfully = true;
 
         Debug.Log("OnStateEnter completedSuccesfully " + _stateName.ToString());
 

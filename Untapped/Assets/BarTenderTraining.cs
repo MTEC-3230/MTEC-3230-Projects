@@ -27,15 +27,15 @@ public enum TutorialSteps
     //TrainingTightenScrewState,
     //TrainingCompleted,
 
-    ChoosingRecipeState, // display ingredients ie. orange juice and vodka
-    SelectingGlassState, // grab a glass
-    AddingIngredientsState, // wait for user to add ingredients
-    ShakingDrinkState,
-    ServingDrinkState,
-
-    LastEnumState,
-
-
+    Step1, // display ingredients ie. orange juice and vodka
+    Step2, // grab a glass
+    Step3, // wait for user to add ingredients
+    Step4,
+    Step5,
+    Step6,
+    Step7,
+    Complete
+    
 };
 
 public class BarTenderTraining : TrainingManager//: StateMachine

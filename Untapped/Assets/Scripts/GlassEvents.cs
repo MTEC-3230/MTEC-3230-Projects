@@ -8,6 +8,8 @@ public class GlassEvents : MonoBehaviour
     private Glass m;
     public delegate void OnPourDelegate(GameObject a, GameObject b);
     public static OnPourDelegate OnPour;
+    public delegate void OnStopPourDelegate(GameObject a, GameObject b);
+    public static OnStopPourDelegate OnStopPour;
 
     public delegate void OnPickupDelegate(GameObject a);
     public static OnPickupDelegate OnPickup;
@@ -15,6 +17,7 @@ public class GlassEvents : MonoBehaviour
     private ParticleSystem pourParticles;
     private bool isPouring = false;
 
+    private GameObject pourTarget = null;
     void Start()
     {
         m = GetComponent<Glass>();
@@ -30,6 +33,7 @@ public class GlassEvents : MonoBehaviour
         if (Vector3.Dot(transform.up, Vector3.down) > 0.8)
         {
             //when pouring
+            isPouring = true;
             if (m.currentDrinks.Count != 0)
             {
                 pourParticles.enableEmission = true;
@@ -45,22 +49,22 @@ public class GlassEvents : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag.Equals("Bottle") && !hit.transform.gameObject.Equals(this.gameObject))
                 {
-                    if (!isPouring)
-                    {
-                        OnPour(this.gameObject, hit.transform.gameObject);
-                        isPouring = true;
-                    }
+                        pourTarget = hit.transform.gameObject;
+                        OnPour(this.gameObject, pourTarget);
                 }
                 
             }
-
-
         }
         else
         {
+            if (isPouring && pourTarget != null)
+            {
+                Debug.Log("Pour test: " + pourTarget.name);
+                OnStopPour(this.gameObject, pourTarget);
+                pourTarget = null;
+            }
             isPouring = false;
             pourParticles.enableEmission = false;
         }
-
     }
 }

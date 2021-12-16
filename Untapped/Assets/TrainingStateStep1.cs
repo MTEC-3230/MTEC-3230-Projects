@@ -37,7 +37,7 @@ public class TrainingStateStep1 : TrainingState//: IState
                 Debug.Log("What the FUCK");
                 return;
             }
-            if (a.name == "WhiskeyGlass" && thisGlass.currentDrinks.Count == 0)
+            if (a.name == "Whiskey Glass" && thisGlass.currentDrinks.Count == 0)
             {
                 selectedGlass = a;
                 completedSuccesfully = true;
@@ -46,7 +46,7 @@ public class TrainingStateStep1 : TrainingState//: IState
             {
                 if (thisGlass.currentDrinks.Count > 0)
                 {
-                    step1 = "Pick a glass that is empty.";
+                    step1 = "Pick a Whiskey Glass that is empty.";
                     _manager.textDisplay.SetDialogText(step1);
                 }
                 else
@@ -141,4 +141,18 @@ public class TrainingStateStep1 : TrainingState//: IState
         yield break;
 
     }
+    
+        
+    public void Update()
+    {
+        if (_manager.devMode)
+        {
+            if (Input.GetKeyUp(KeyCode.Keypad1))
+            {
+                this.completedSuccesfully = true;
+            }
+        }
+    }
+    
+    
 }

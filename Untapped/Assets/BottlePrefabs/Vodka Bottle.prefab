@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4705360934627130554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.22109997, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3203, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8178709095580039674}
@@ -4852,7 +4852,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5177949135740537833}
-  m_Mesh: {fileID: -5234472504080141388, guid: 5f821073227f7904bb629d8152603db4, type: 3}
+  m_Mesh: {fileID: -951131634110147974, guid: df5ff694b6e0bb4448b5f3e4d01e7253, type: 3}
 --- !u!23 &6910513330118016821
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4873,6 +4873,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 69a7e50a640f0eb40a745105407e31cc, type: 2}
+  - {fileID: 2100000, guid: 3ce1cc664b4c37545966e1f8e9b5286f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5107,7 +5108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.005, y: 0.0668}
+  m_AnchoredPosition: {x: -0.005, y: 0.129}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8675325144434972710
@@ -5198,8 +5199,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.3
-  m_fontSizeBase: 0.3
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5250,6 +5251,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8178709095580039674}
     m_Modifications:
+    - target: {fileID: -5178661895559278292, guid: 5f821073227f7904bb629d8152603db4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -951131634110147974, guid: df5ff694b6e0bb4448b5f3e4d01e7253, type: 3}
     - target: {fileID: -4216859302048453862, guid: 5f821073227f7904bb629d8152603db4, type: 3}
       propertyPath: m_RootOrder
       value: 1

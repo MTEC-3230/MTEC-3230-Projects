@@ -24,7 +24,7 @@ public class TrainingStateStep3 : TrainingState//: IState
 
     private void Start()
     {
-        GlassEvents.OnPour += Pour;
+        GlassEvents.OnStopPour += Pour;
     }
 
     public override IEnumerator OnStateEnter()
@@ -67,7 +67,7 @@ public class TrainingStateStep3 : TrainingState//: IState
                 {
                     completedSuccesfully = false;
                     _manager.SetState(_manager.step1);
-                    _manager.step1.step1 = "YOU FUCKED UP2. PICK A NEW GLASS";
+                    _manager.step1.step1 = "Try again. Pick a new Whiskey Glass.";
                     _manager.textDisplay.SetDialogText(_manager.step1.step1);
                 }
                 else if (!_manager.SelectedGlass.Equals(b))
@@ -127,5 +127,15 @@ public class TrainingStateStep3 : TrainingState//: IState
     {
         yield break;
 
+    }
+    public void Update()
+    {
+        if (_manager.devMode)
+        {
+            if (Input.GetKeyUp(KeyCode.Keypad3))
+            {
+                this.completedSuccesfully = true;
+            }
+        }
     }
 }
